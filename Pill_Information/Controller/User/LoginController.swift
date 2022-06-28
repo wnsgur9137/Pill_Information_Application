@@ -9,23 +9,40 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class LoginController: UIViewController {
-    
+class LoginController: UIViewController, UITextFieldDelegate {
+
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
+//    txtPassword.delegate = self
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // 로그인이 되어있을 시
         checkLogin()
-
+        txtEmail.delegate = self
+        txtPassword.delegate = self
+        txtEmail.keyboardType = .emailAddress
     }
     
     func checkLogin() {
-        if let user = Auth.auth().currentUser {
-            
+//        if let user = Auth.auth().currentUser {
+//            
+//        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.txtEmail.resignFirstResponder()
+        self.txtPassword.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == self.txtEmail {
+            self.txtPassword.becomeFirstResponder()
+        } else {
+            self.txtPassword.resignFirstResponder()
         }
+        return true
     }
     
     @IBAction func btnLogin(_ sender: UIButton) {
@@ -51,15 +68,5 @@ class LoginController: UIViewController {
         alertCon.addAction(alertAct)
         present(alertCon, animated: true, completion: nil)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

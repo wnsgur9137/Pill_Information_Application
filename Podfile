@@ -6,15 +6,5 @@ target 'Pill_Information' do
   use_frameworks!
 
   # Pods for Pill_Information
-  
-  # firebase
-  pod 'Google-Mobile-Ads-SDK'
-  pod 'Firebase/Analytics'  # Google Analytics
-  pod 'FirebaseMessaging'   # FirebaseMessageing
-  pod 'FirebaseCrashlytics' # FirebaseCrashlytics
-  pod 'FirebaseDynamicLinks'    # FirebaseDynamicLinks
-  pod 'FirebaseInAppMessageing' # FirebaseInAppMessaging
-  pod 'FirebaseRemoteConfig'    # FirebaseRemoteConfig
-  
 
 end
