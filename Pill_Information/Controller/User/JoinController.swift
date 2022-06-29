@@ -7,9 +7,9 @@
 
 import UIKit
 import SwiftUI
-import Firebase
-import FirebaseAuth
-import FirebaseFirestore
+//import Firebase
+//import FirebaseAuth
+//import FirebaseFirestore
 
 class JoinController: UIViewController, UITextFieldDelegate {
     
@@ -23,13 +23,23 @@ class JoinController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtPasswordCheck: UITextField!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var btnNext: UIButton!
+    @IBOutlet weak var lblEmailCheck: UILabel!
+    @IBOutlet weak var lblPasswordCheck: UILabel!
     
+    var email_ = ""
+    var emailCheck = false
+    var passCheck = false
+    var keyHeight: CGFloat?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         btnNext.isEnabled = false
         initPageControl()
         initTextField()
+        
+        lblEmailCheck.text = ""
+        lblPasswordCheck.text = ""
+        
     }
     
     
@@ -48,6 +58,10 @@ class JoinController: UIViewController, UITextFieldDelegate {
         txtPassword.delegate = self
         txtPasswordCheck.delegate = self
         txtEmail.keyboardType = .emailAddress
+        txtPassword.keyboardType = .default
+        txtPasswordCheck.keyboardType = .default
+        
+        txtEmail.text = email_
     }
     
     
@@ -77,6 +91,19 @@ class JoinController: UIViewController, UITextFieldDelegate {
     }
     
     
+    func isValid(str: String, textField:UITextField) -> Bool {
+        if textField == txtEmail {
+            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+            let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+            return emailTest.evaluate(with: str)
+        } else {
+            let passwordRegEx = "^[a-zA-Z0-9]{8,}$"
+            let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
+            return passwordTest.evaluate(with: str)
+        }
+    }
+    
+    
     /// 다음 버튼
     ///  이메일과 비밀번호를 확인한 뒤 버튼이 활성화 됨.
     /// - Parameter sender: 다음 버튼
@@ -84,22 +111,42 @@ class JoinController: UIViewController, UITextFieldDelegate {
         if txtPassword.text != txtPasswordCheck.text {
             messageAlert(controllerTitle: "경고", controllerMessage: "비밀번호가 일치하지 않습니다.", actionTitle: "확인")
         } else {
-            let vcName = self.storyboard?.instantiateViewController(withIdentifier: "profileInitBoard")
-                    vcName?.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
-                    vcName?.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
-                    self.present(vcName!, animated: true, completion: nil)
-//                Auth.auth().createUser(withEmail: txtEmail.text!, password: txtPassword.text!) { [self]authResult, error in
-//                    self.messageAlert(controllerTitle: "회원가입 성공", controllerMessage: "환영합니다.", actionTitle: "로그인")
-//                }
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "profileInitBoard")as? profileInitController else {return}
+            
+            vcName.email_ = self.txtEmail.text ?? ""
+            vcName.pass_ = self.txtPassword.text ?? ""
+            
+            vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
+            vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
+            self.present(vcName, animated: true, completion: nil)
         }
     }
     
-    
-    /// 모든 텍스트필드의 공백을 검사
-    /// 공백이 아닐 경우 btnNext 활성화
+    /// 모든 텍스트필드의 공백을 검사, 이메일 형식, 비밀번호 형식 검사
+    /// 위 경우를 모두 만족할 경우 btnNext 활성화
     /// - Parameter textField: 입력하고 있는 TextField
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        if txtEmail.text == "" || txtPassword.text == "" || txtPasswordCheck.text == "" {
+        if textField == txtEmail {
+            emailCheck = isValid(str: txtEmail.text ?? "", textField: txtEmail)
+            if emailCheck == false {
+                lblEmailCheck.text = "이메일 형식에 맞추어 주십시오."
+            } else {
+                lblEmailCheck.text = ""
+            }
+        } else {
+            if txtPassword.text != txtPasswordCheck.text {
+                lblPasswordCheck.text = "비밀번호가 일치하지 않습니다."
+            } else {
+                lblPasswordCheck.text = ""
+                passCheck = isValid(str: txtPasswordCheck.text ?? "", textField: txtPasswordCheck)
+                if passCheck == false {
+                    lblPasswordCheck.text = "소문자, 대문자, 숫자를 조합하여 8자 이상"
+                }
+            }
+        }
+        
+        if txtEmail.text == "" || txtPassword.text == "" || txtPasswordCheck.text == "" ||
+            emailCheck == false || passCheck == false {
             btnNext.isEnabled = false
         } else {
             btnNext.isEnabled = true
