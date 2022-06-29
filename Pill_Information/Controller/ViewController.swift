@@ -15,6 +15,11 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    func checkLogin() {
+//        if let user = Auth.auth().currentUser {
+//
+//        }
+    }
 
 }
 

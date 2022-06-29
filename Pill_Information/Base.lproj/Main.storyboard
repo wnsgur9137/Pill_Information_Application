@@ -223,6 +223,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="9dI-rI-hn8"/>
                     <connections>
+                        <outlet property="btnLogin" destination="9be-5z-GNt" id="TiB-au-p3Y"/>
                         <outlet property="txtEmail" destination="H7S-Hw-V4w" id="W58-aJ-VIH"/>
                         <outlet property="txtPassword" destination="Thf-Lw-wbu" id="4f1-3n-EAR"/>
                     </connections>
@@ -367,7 +368,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="다음"/>
                                                 <connections>
-                                                    <action selector="join:" destination="36H-ih-NOz" eventType="touchUpInside" id="NpF-eb-yKW"/>
+                                                    <action selector="next:" destination="36H-ih-NOz" eventType="touchUpInside" id="euh-bU-U5H"/>
                                                     <segue destination="4fr-xN-Evs" kind="presentation" modalPresentationStyle="fullScreen" id="iYQ-9i-LFk"/>
                                                 </connections>
                                             </button>
@@ -421,8 +422,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zcA-we-dmT">
-                                <rect key="frame" x="16" y="25" width="358" height="866"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zcA-we-dmT">
+                                <rect key="frame" x="16" y="30" width="358" height="814"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="p2w-nX-Cv3">
                                         <rect key="frame" x="0.0" y="0.0" width="358" height="40"/>
@@ -436,6 +437,7 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="&lt; 뒤로가기"/>
                                                 <connections>
                                                     <action selector="stackBack:" destination="nh3-Un-2uW" eventType="touchUpInside" id="VCD-xZ-nSw"/>
+                                                    <segue destination="36H-ih-NOz" kind="presentation" modalPresentationStyle="fullScreen" id="Qh8-U6-TZh"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNZ-6h-H6c" userLabel="space">
@@ -489,9 +491,6 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                                                        <connections>
-                                                            <action selector="emailChanged:" destination="36H-ih-NOz" eventType="editingChanged" id="8bf-BR-3wh"/>
-                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -540,7 +539,6 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                         <connections>
-                                                            <action selector="passCheckChanged:" destination="36H-ih-NOz" eventType="editingChanged" id="mOu-2v-0QJ"/>
                                                             <action selector="txtBirthClick:" destination="4fr-xN-Evs" eventType="editingDidBegin" id="Cza-h3-ehy"/>
                                                         </connections>
                                                     </textField>
@@ -566,9 +564,6 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="tel"/>
-                                                        <connections>
-                                                            <action selector="passCheckChanged:" destination="36H-ih-NOz" eventType="editingChanged" id="tJK-WW-71c"/>
-                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -592,9 +587,6 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                                                        <connections>
-                                                            <action selector="passCheckChanged:" destination="36H-ih-NOz" eventType="editingChanged" id="dKd-Rf-0iR"/>
-                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -618,9 +610,6 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                                        <connections>
-                                                            <action selector="passCheckChanged:" destination="36H-ih-NOz" eventType="editingChanged" id="Btl-CL-5cm"/>
-                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -631,36 +620,42 @@
                                                     <constraint firstAttribute="height" constant="20" id="8T0-oU-yOf"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="다음"/>
-                                                <connections>
-                                                    <action selector="join:" destination="36H-ih-NOz" eventType="touchUpInside" id="6g0-H0-7pV"/>
-                                                </connections>
+                                                <buttonConfiguration key="configuration" style="plain" title="회원가입"/>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKQ-GI-2Eh" userLabel="space">
-                                        <rect key="frame" x="0.0" y="681" width="358" height="160"/>
+                                        <rect key="frame" x="0.0" y="681" width="358" height="100"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="160" id="HM2-Y7-gjj"/>
+                                            <constraint firstAttribute="height" constant="100" id="HM2-Y7-gjj"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="y1J-g4-X1T">
-                                        <rect key="frame" x="0.0" y="841" width="358" height="25"/>
+                                        <rect key="frame" x="0.0" y="781" width="358" height="33"/>
                                     </pageControl>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="E3T-8z-HUb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zcA-we-dmT" firstAttribute="leading" secondItem="E3T-8z-HUb" secondAttribute="leading" constant="16" id="1w7-cY-J85"/>
+                            <constraint firstAttribute="bottom" secondItem="zcA-we-dmT" secondAttribute="bottom" id="U5W-KN-pHe"/>
+                            <constraint firstItem="zcA-we-dmT" firstAttribute="top" secondItem="r1T-Dy-57s" secondAttribute="top" constant="30" id="bX1-G8-beX"/>
+                            <constraint firstItem="E3T-8z-HUb" firstAttribute="trailing" secondItem="zcA-we-dmT" secondAttribute="trailing" constant="16" id="nRn-F9-hIg"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnJoin" destination="aHB-dx-BID" id="7RX-D7-Bix"/>
+                        <outlet property="btnSex" destination="bu5-lg-cLz" id="Cqr-CM-lSO"/>
+                        <outlet property="pageControl" destination="y1J-g4-X1T" id="Hs4-zA-6jQ"/>
                         <outlet property="txtAddress1" destination="2JJ-Qa-JX0" id="In5-ak-bvH"/>
                         <outlet property="txtAddress2" destination="SsT-di-sJU" id="jBW-US-5kL"/>
                         <outlet property="txtBirthday" destination="7GF-Bc-Q54" id="wkt-iG-WHd"/>
-                        <outlet property="txtName" destination="fFi-mm-w4q" id="VMn-jQ-KEF"/>
+                        <outlet property="txtName" destination="fFi-mm-w4q" id="rIA-c3-Chf"/>
                         <outlet property="txtPhone" destination="9GF-5W-4TC" id="3p2-uo-bGO"/>
                     </connections>
                 </viewController>
@@ -670,6 +665,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="13b-9d-iL0"/>
         <segue reference="zbc-HL-4Oe"/>
     </inferredMetricsTieBreakers>
     <resources>
