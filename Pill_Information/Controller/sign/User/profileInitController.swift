@@ -113,9 +113,13 @@ class profileInitController: UIViewController, UITextFieldDelegate {
     
     @IBAction func btnJoin(_ sender: UIButton) {
         Auth.auth().createUser(withEmail: email_, password: pass_) { [self]authResult, error in
-
+            
 //            let uid = authResult?.user.uid
-            self.messageAlert(controllerTitle: "회원가입 성공", controllerMessage: "환영합니다.", actionTitle: "로그인")
+            if let _ = error {
+                self.messageAlert(controllerTitle: "회원가입 실패", controllerMessage: "중복된 이메일/핸드폰 번호입니다.", actionTitle: "확인")
+            } else {
+                self.messageAlert(controllerTitle: "회원가입 성공", controllerMessage: "환영합니다.", actionTitle: "로그인")
+            }
         }
     }
     

@@ -32,6 +32,9 @@
                                         <rect key="frame" x="0.0" y="31" width="153.66666666666666" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Apple 계정으로 로그인"/>
+                                        <connections>
+                                            <action selector="btnAppleLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H6h-54-ccY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXj-cz-H1k">
                                         <rect key="frame" x="0.0" y="62" width="153.66666666666666" height="31"/>
@@ -67,7 +70,7 @@
         <scene sceneID="oVc-d4-RmU">
             <objects>
                 <viewController id="BX5-25-BfR" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KAr-Oj-Qep">
+                    <view key="view" contentMode="scaleToFill" id="KAr-Oj-Qep" customClass="MainTabView" customModule="Pill_Information" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="qUA-Ip-oz9"/>
@@ -77,13 +80,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SPm-PY-bNM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047" y="1320"/>
+            <point key="canvasLocation" x="1046" y="1357"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="lTO-dP-UPW">
             <objects>
-                <viewController id="55e-78-9L9" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2eu-u1-PEv">
+                <viewController id="55e-78-9L9" customClass="MainViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2eu-u1-PEv" customClass="MainView">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="VwI-Dn-X1M"/>
@@ -98,7 +101,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="58I-DO-7Jt">
             <objects>
-                <tabBarController id="W2G-Tm-qYW" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainBoard" id="W2G-Tm-qYW" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Sq1-aZ-76U">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -107,11 +110,28 @@
                     <connections>
                         <segue destination="55e-78-9L9" kind="relationship" relationship="viewControllers" id="jEn-TS-7RL"/>
                         <segue destination="BX5-25-BfR" kind="relationship" relationship="viewControllers" id="ygU-so-xwL"/>
+                        <segue destination="b1z-RH-Yhj" kind="relationship" relationship="viewControllers" id="SqN-b3-HJU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDb-c8-iZl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="1016"/>
+            <point key="canvasLocation" x="168" y="2074"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="D9O-Uy-07J">
+            <objects>
+                <viewController id="b1z-RH-Yhj" customClass="DiaryViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="daY-QW-Yfk">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="yyz-Ap-hSV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="g64-sh-n7b"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vqu-Do-7Hk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1034" y="2001"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="d0r-xG-G5z">

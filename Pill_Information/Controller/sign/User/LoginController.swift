@@ -59,9 +59,13 @@ class LoginController: UIViewController, UITextFieldDelegate {
     @IBAction func btnLogin(_ sender: UIButton) {
         Auth.auth().signIn(withEmail: txtEmail.text!, password: txtPassword.text!) { (user, error) in
             if user != nil {
-                self.messageAlert(controllerTitle: "로그인 실패", controllerMessage: "로그인 실패", actionTitle: "확인")
+                guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "mainBoard")as? UITabBarController else {return}
+                
+                vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
+                vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
+                self.present(vcName, animated: true, completion: nil)
             } else {
-                self.messageAlert(controllerTitle: "성공", controllerMessage: "성공", actionTitle: "확인")
+                self.messageAlert(controllerTitle: "로그인 실패", controllerMessage: "로그인 실패", actionTitle: "확인")
             }
         }
     }
