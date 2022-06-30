@@ -151,14 +151,14 @@
 				66B10D43286547CE00CEE1FA /* Sources */,
 				66B10D44286547CE00CEE1FA /* Frameworks */,
 				66B10D45286547CE00CEE1FA /* Resources */,
+				705BF6F1809C56463E05CF30 /* [CP] Embed Pods Frameworks */,
+				00A773BD207565D70582114F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Pill_Information;
-			packageProductDependencies = (
-			);
 			productName = Pill_Information;
 			productReference = 66B10D47286547CE00CEE1FA /* Pill_Information.app */;
 			productType = "com.apple.product-type.application";
@@ -187,8 +187,6 @@
 				Base,
 			);
 			mainGroup = 66B10D3E286547CE00CEE1FA;
-			packageReferences = (
-			);
 			productRefGroup = 66B10D48286547CE00CEE1FA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -213,6 +211,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		00A773BD207565D70582114F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pill_Information/Pods-Pill_Information-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pill_Information/Pods-Pill_Information-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pill_Information/Pods-Pill_Information-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		705BF6F1809C56463E05CF30 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pill_Information/Pods-Pill_Information-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pill_Information/Pods-Pill_Information-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pill_Information/Pods-Pill_Information-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F7D9B927E7ADFFD004D34B1A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

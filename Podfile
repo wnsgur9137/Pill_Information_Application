@@ -6,5 +6,6 @@ target 'Pill_Information' do
   use_frameworks!
 
   # Pods for Pill_Information
+  pod 'GoogleSignIn', '5.0.2'
 
 end

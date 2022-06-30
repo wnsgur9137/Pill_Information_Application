@@ -33,7 +33,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Apple 계정으로 로그인"/>
                                         <connections>
-                                            <action selector="btnAppleLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H6h-54-ccY"/>
+                                            <action selector="appleLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TmC-xy-c9Y"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXj-cz-H1k">
@@ -50,6 +50,9 @@
                                         <rect key="frame" x="0.0" y="124" width="153.66666666666666" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Google로 로그인"/>
+                                        <connections>
+                                            <action selector="googleLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kfU-dV-9lh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -61,6 +64,13 @@
                             <constraint firstItem="Jup-lT-qrj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="juP-jr-ZCt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnAppleLogin" destination="pQi-zU-l4W" id="18q-Ii-eKd"/>
+                        <outlet property="btnEmailLogin" destination="O8K-4b-Gvh" id="k15-7n-KYS"/>
+                        <outlet property="btnFaceBookLogin" destination="EXj-cz-H1k" id="L1N-hh-GoA"/>
+                        <outlet property="btnGitHubLogin" destination="xae-wN-ysY" id="JvI-6B-vr2"/>
+                        <outlet property="btnGoogleLogin" destination="gyP-sw-kW7" id="ypN-Wj-aM2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,9 +9,10 @@ import UIKit
 import FirebaseAuth
 import AuthenticationServices
 import CryptoKit
+import GoogleSignIn
 
+// 애플 로그인 시작
 private var currentNonce: String?
-
 extension ViewController: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
@@ -120,15 +121,26 @@ extension ViewController : ASAuthorizationControllerPresentationContextProviding
         return self.view.window!
     }
 }
+// 애플 로그인 끝
 
 
 class ViewController: UIViewController {
     
-
+    @IBOutlet weak var btnEmailLogin: UIButton!
+    @IBOutlet weak var btnAppleLogin: UIButton!
+    @IBOutlet weak var btnFaceBookLogin: UIButton!
+    @IBOutlet weak var btnGitHubLogin: UIButton!
+    @IBOutlet weak var btnGoogleLogin: GIDSignInButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        GIDSignIn.sharedInstance()?.presentingViewController = self
         checkLogin()
+    }
+    
+    /// 구글 로그인 버튼이 실행될 때 웹 뷰가 필요함.
+    override func viewWillAppear(_ animated: Bool) {
+        GIDSignIn.sharedInstance().signIn()
     }
 
     func checkLogin() {
@@ -143,8 +155,12 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func btnAppleLogin(_ sender: UIButton) {
+    @IBAction func appleLogin(_ sender: UIButton) {
         startSignInWithAppleFlow()
+    }
+    
+    @IBAction func googleLogin(_ sender: UIButton) {
+        GIDSignIn.sharedInstance().signIn()
     }
 
 }
