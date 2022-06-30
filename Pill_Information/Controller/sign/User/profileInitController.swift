@@ -21,8 +21,7 @@ class profileInitController: UIViewController, UITextFieldDelegate {
     
     private let datePicker = UIDatePicker()
     private var diaryDate: Date?
-    var email_ = ""
-    var pass_ = ""
+
     var sex_ = ""
     
     override func viewDidLoad() {
@@ -101,26 +100,8 @@ class profileInitController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @IBAction func btnBack(_ sender: UIButton) {
-        guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "joinBoard")as? JoinController else {return}
-        
-        vcName.email_ = email_
-        
-        vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
-        vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
-        self.present(vcName, animated: true, completion: nil)
-    }
-    
     @IBAction func btnJoin(_ sender: UIButton) {
-        Auth.auth().createUser(withEmail: email_, password: pass_) { [self]authResult, error in
-            
-//            let uid = authResult?.user.uid
-            if let _ = error {
-                self.messageAlert(controllerTitle: "회원가입 실패", controllerMessage: "중복된 이메일/핸드폰 번호입니다.", actionTitle: "확인")
-            } else {
-                self.messageAlert(controllerTitle: "회원가입 성공", controllerMessage: "환영합니다.", actionTitle: "로그인")
-            }
-        }
+        
     }
     
     

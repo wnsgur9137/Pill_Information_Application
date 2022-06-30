@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="viewBoard" id="BYZ-38-t0r" customClass="ViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,17 +127,28 @@
             </objects>
             <point key="canvasLocation" x="168" y="2074"/>
         </scene>
-        <!--Item-->
+        <!--내 정보-->
         <scene sceneID="D9O-Uy-07J">
             <objects>
-                <viewController id="b1z-RH-Yhj" customClass="DiaryViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="daY-QW-Yfk">
+                <viewController id="b1z-RH-Yhj" customClass="MyProfileViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="daY-QW-Yfk" customClass="MyProFileController">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rkv-HM-dt3">
+                                <rect key="frame" x="158" y="226" width="76" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOut:" destination="b1z-RH-Yhj" eventType="touchUpInside" id="VKb-27-sVb"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="yyz-Ap-hSV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="g64-sh-n7b"/>
+                    <tabBarItem key="tabBarItem" title="내 정보" id="g64-sh-n7b"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vqu-Do-7Hk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -477,9 +488,9 @@
                                                     <constraint firstAttribute="width" constant="100" id="tnD-m7-iBk"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="다음"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="회원가입"/>
                                                 <connections>
-                                                    <action selector="next:" destination="36H-ih-NOz" eventType="touchUpInside" id="euh-bU-U5H"/>
+                                                    <action selector="singUp:" destination="36H-ih-NOz" eventType="touchUpInside" id="htM-7q-SBt"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -543,20 +554,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="p2w-nX-Cv3">
                                         <rect key="frame" x="0.0" y="0.0" width="358" height="40"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEE-WP-32J">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="iDM-JP-wvU"/>
-                                                </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="&lt; 뒤로가기"/>
-                                                <connections>
-                                                    <action selector="btnBack:" destination="4fr-xN-Evs" eventType="touchUpInside" id="r11-oH-oml"/>
-                                                    <action selector="stackBack:" destination="nh3-Un-2uW" eventType="touchUpInside" id="VCD-xZ-nSw"/>
-                                                </connections>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNZ-6h-H6c" userLabel="space">
-                                                <rect key="frame" x="108" y="0.0" width="250" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="358" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -738,7 +737,7 @@
                                                     <constraint firstAttribute="height" constant="20" id="8T0-oU-yOf"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="회원가입"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="정보 입력"/>
                                                 <connections>
                                                     <action selector="btnJoin:" destination="4fr-xN-Evs" eventType="touchUpInside" id="Jhd-oI-8bo"/>
                                                 </connections>

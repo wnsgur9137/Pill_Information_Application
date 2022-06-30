@@ -59,6 +59,10 @@ class LoginController: UIViewController, UITextFieldDelegate {
     @IBAction func btnLogin(_ sender: UIButton) {
         Auth.auth().signIn(withEmail: txtEmail.text!, password: txtPassword.text!) { (user, error) in
             if user != nil {
+                
+                UserDefaults.standard.set(self.txtEmail.text!, forKey: "email")
+                UserDefaults.standard.set(self.txtPassword.text!, forKey: "pwd")
+                
                 guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "mainBoard")as? UITabBarController else {return}
                 
                 vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정

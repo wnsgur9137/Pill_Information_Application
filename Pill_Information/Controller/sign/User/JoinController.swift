@@ -7,8 +7,8 @@
 
 import UIKit
 import SwiftUI
-//import Firebase
-//import FirebaseAuth
+import Firebase
+import FirebaseAuth
 //import FirebaseFirestore
 
 class JoinController: UIViewController, UITextFieldDelegate {
@@ -26,7 +26,6 @@ class JoinController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lblEmailCheck: UILabel!
     @IBOutlet weak var lblPasswordCheck: UILabel!
     
-    var email_ = ""
     var emailCheck = false
     var passCheck = false
     var keyHeight: CGFloat?
@@ -61,7 +60,7 @@ class JoinController: UIViewController, UITextFieldDelegate {
         txtPassword.keyboardType = .default
         txtPasswordCheck.keyboardType = .default
         
-        txtEmail.text = email_
+        txtEmail.text = ""
     }
     
     
@@ -107,18 +106,31 @@ class JoinController: UIViewController, UITextFieldDelegate {
     /// 다음 버튼
     ///  이메일과 비밀번호를 확인한 뒤 버튼이 활성화 됨.
     /// - Parameter sender: 다음 버튼
-    @IBAction func next(_ sender: UIButton) {
+    @IBAction func singUp(_ sender: UIButton) {
         if txtPassword.text != txtPasswordCheck.text {
             messageAlert(controllerTitle: "경고", controllerMessage: "비밀번호가 일치하지 않습니다.", actionTitle: "확인")
         } else {
-            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "profileInitBoard")as? profileInitController else {return}
-            
-            vcName.email_ = self.txtEmail.text ?? ""
-            vcName.pass_ = self.txtPassword.text ?? ""
-            
-            vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
-            vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
-            self.present(vcName, animated: true, completion: nil)
+            Auth.auth().createUser(withEmail: txtEmail.text!, password: txtPassword.text!) { [self]authResult, error in
+                
+    //            let uid = authResult?.user.uid
+                if let _ = error {
+                    self.messageAlert(controllerTitle: "회원가입 실패", controllerMessage: "중복된 이메일/핸드폰 번호입니다.", actionTitle: "확인")
+                } else {
+                    let alertCon = UIAlertController(title: "회원가입 성공", message: "회원가입에 성공하였습니다.", preferredStyle: UIAlertController.Style.alert)
+                    let alertAct = UIAlertAction(title: "로그인", style: UIAlertAction.Style.default, handler:  { (action) in
+                        self.changeView(viewName: "loginView") })
+                    alertCon.addAction(alertAct)
+                    present(alertCon, animated: true, completion: nil)
+                }
+            }
+//            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "profileInitBoard")as? profileInitController else {return}
+//
+//            vcName.email_ = self.txtEmail.text ?? ""
+//            vcName.pass_ = self.txtPassword.text ?? ""
+//
+//            vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
+//            vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
+//            self.present(vcName, animated: true, completion: nil)
         }
     }
     
@@ -166,4 +178,13 @@ class JoinController: UIViewController, UITextFieldDelegate {
         present(alertCon, animated: true, completion: nil)
     }
     
+    func changeView(viewName: String) {
+        if viewName == "loginView" {
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "loginBoard")as? LoginController else {return}
+            
+            vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
+            vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
+            self.present(vcName, animated: true, completion: nil)
+        }
+    }
 }

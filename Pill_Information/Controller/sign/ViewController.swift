@@ -134,24 +134,38 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        GIDSignIn.sharedInstance()?.presentingViewController = self
         checkLogin()
     }
     
     /// 구글 로그인 버튼이 실행될 때 웹 뷰가 필요함.
     override func viewWillAppear(_ animated: Bool) {
-        GIDSignIn.sharedInstance().signIn()
+//        GIDSignIn.sharedInstance()?.presentingViewController = self
+//        GIDSignIn.sharedInstance().signIn()
     }
 
     func checkLogin() {
-        if let user = Auth.auth().currentUser {
-            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "mainBoard")as? UITabBarController else {return}
-            
-            vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
-            vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
-            self.present(vcName, animated: true, completion: nil)
+        
+        let uid:String?
+        let pwd:String?
+        
+        if let userEmail = UserDefaults.standard.string(forKey: "email") {
+            uid = userEmail
+            pwd = UserDefaults.standard.string(forKey: "pwd")
+            Auth.auth().signIn(withEmail: uid!, password: pwd!) { (user, error) in
+                if user != nil {
+                    self.gotoMainController()
+                } else {
+                    self.messageAlert(controllerTitle: "로그인 실패", controllerMessage: "로그인 실패", actionTitle: "확인")
+                }
+            }
+            gotoMainController()
+        }
+        let user = Auth.auth().currentUser
+        if user == nil {
+            print("\n\n user is nil \n\n")
         } else {
-            
+            print("\n\n user loing \n\n")
+            gotoMainController()
         }
     }
     
@@ -160,7 +174,29 @@ class ViewController: UIViewController {
     }
     
     @IBAction func googleLogin(_ sender: UIButton) {
+        GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance().signIn()
+    }
+    
+    func gotoMainController() {
+        print("\n\ngotoMainCotnroller\n\n")
+        guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "mainBoard")as? UITabBarController else {return}
+        
+        vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
+        vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
+        self.present(vcName, animated: true, completion: nil)
+    }
+    
+    /// Alert 출력
+    /// - Parameters:
+    ///   - controllerTitle: Alert Title
+    ///   - controllerMessage: Alert Message
+    ///   - actionTitle: action(button content)
+    func messageAlert(controllerTitle:String, controllerMessage:String, actionTitle:String) {
+        let alertCon = UIAlertController(title: controllerTitle, message: controllerMessage, preferredStyle: UIAlertController.Style.alert)
+        let alertAct = UIAlertAction(title: actionTitle, style: UIAlertAction.Style.default)
+        alertCon.addAction(alertAct)
+        present(alertCon, animated: true, completion: nil)
     }
 
 }
