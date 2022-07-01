@@ -7,6 +7,8 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseStorage
+import FirebaseDatabase
 
 class profileInitController: UIViewController, UITextFieldDelegate {
 
@@ -15,31 +17,20 @@ class profileInitController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtPhone: UITextField!
     @IBOutlet weak var txtAddress1: UITextField!
     @IBOutlet weak var txtAddress2: UITextField!
-    @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var btnJoin: UIButton!
-    @IBOutlet weak var sgSex: UISegmentedControl!
+    @IBOutlet weak var sgGender: UISegmentedControl!
     
     private let datePicker = UIDatePicker()
     private var diaryDate: Date?
 
-    var sex_ = ""
+    var gender = "남"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         btnJoin.isEnabled = false
-        initPageControl()
         initTextField()
         
-    }
-    
-    
-    /// 페이지 컨트롤 초기 설정
-    func initPageControl() {
-        pageControl.numberOfPages = 2   // 페이지 총 개수
-        pageControl.currentPage = 1             // 현재 페이지
-        pageControl.pageIndicatorTintColor = UIColor.gray   // 다른 페이지 색상
-        pageControl.currentPageIndicatorTintColor = UIColor.blue    // 현재 페이지 색상
     }
     
     
@@ -92,17 +83,27 @@ class profileInitController: UIViewController, UITextFieldDelegate {
     }
 
     
-    @IBAction func changeSex(_ sender: UISegmentedControl) {
+    @IBAction func changeGender(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
-            sex_ = "남"
+            gender = "남"
         } else {
-            sex_ = "여"
+            gender = "여"
         }
     }
     
-    @IBAction func btnJoin(_ sender: UIButton) {
+    @IBAction func btnInsert(_ sender: UIButton) {
+        let email = UserDefaults.standard.string(forKey: "email")
+        let user = Auth.auth().currentUser
         
+        if user == nil {
+            changeView(viewName: "login")
+        } else {
+            let uid = user?.uid
+            Database.database().reference().child("users").child(uid!).setValue(["Name":self.txtName.text!, "Email":email!, "Gender":self.gender, "BirthDay":self.txtBirthday.text!, "Phone":self.txtPhone.text!, "Address1":self.txtAddress1.text!, "Address2":self.txtAddress2.text!])
+            self.messageAlert(controllerTitle: "정보 입력 성공", controllerMessage: "환영합니다.", actionTitle: "확인")
+        }
     }
+    
     
     
     /// 외부 터치 시 키보드 닫기
@@ -138,10 +139,10 @@ class profileInitController: UIViewController, UITextFieldDelegate {
     ///   - controllerMessage: Alert Message
     ///   - actionTitle: action(button content)
     func messageAlert(controllerTitle:String, controllerMessage:String, actionTitle:String) {
-        if controllerTitle == "회원가입 성공" {
+        if controllerTitle == "정보 입력 성공" {
             let alertCon = UIAlertController(title: controllerTitle, message: controllerMessage, preferredStyle: UIAlertController.Style.alert)
             let alertAct = UIAlertAction(title: actionTitle, style: UIAlertAction.Style.default, handler:  { (action) in
-                self.goLoginBoard() })
+                self.changeView(viewName: "main") })
             alertCon.addAction(alertAct)
             present(alertCon, animated: true, completion: nil)
         } else {
@@ -152,11 +153,23 @@ class profileInitController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func changeView(viewName: String) {
+        if viewName == "main" {
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "mainBoard")as? UITabBarController else {return}
+            
+            vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
+            vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
+            self.present(vcName, animated: true, completion: nil)
+        } else if viewName == "login" {
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "loginBoard")as? LoginViewController else {return}
+            
+            vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
+            vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
+            self.present(vcName, animated: true, completion: nil)
+        }
+    }
+    
     func goLoginBoard() {
-        guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "loginBoard")as? LoginController else {return}
         
-        vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
-        vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
-        self.present(vcName, animated: true, completion: nil)
     }
 }

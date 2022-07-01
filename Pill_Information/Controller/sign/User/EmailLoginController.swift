@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class LoginController: UIViewController, UITextFieldDelegate {
+class EmailLoginController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
@@ -63,11 +63,8 @@ class LoginController: UIViewController, UITextFieldDelegate {
                 UserDefaults.standard.set(self.txtEmail.text!, forKey: "email")
                 UserDefaults.standard.set(self.txtPassword.text!, forKey: "pwd")
                 
-                guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "mainBoard")as? UITabBarController else {return}
+                self.changeView(viewName: "main")
                 
-                vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
-                vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
-                self.present(vcName, animated: true, completion: nil)
             } else {
                 self.messageAlert(controllerTitle: "로그인 실패", controllerMessage: "로그인 실패", actionTitle: "확인")
             }
@@ -85,6 +82,38 @@ class LoginController: UIViewController, UITextFieldDelegate {
             btnLogin.isEnabled = true
         }
     }
+    
+    @IBAction func btnSignUp(_ sender: UIButton) {
+        changeView(viewName: "signUp")
+    }
+    
+    @IBAction func btnBack(_ sender: UIButton) {
+        changeView(viewName: "login")
+    }
+    
+    
+    func changeView(viewName: String) {
+        if viewName == "main" {
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "mainBoard")as? UITabBarController else {return}
+            
+            vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
+            vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
+            self.present(vcName, animated: true, completion: nil)
+        } else if viewName == "signUp" {
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "joinBoard")as? JoinController else {return}
+            
+            vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
+            vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
+            self.present(vcName, animated: true, completion: nil)
+        } else if viewName == "login" {
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "loginBoard")as? LoginViewController else {return}
+            
+            vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
+            vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
+            self.present(vcName, animated: true, completion: nil)
+        }
+    }
+    
     
     /// Alert 출력
     /// - Parameters:

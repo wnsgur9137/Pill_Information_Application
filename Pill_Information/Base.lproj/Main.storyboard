@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="viewBoard" id="BYZ-38-t0r" customClass="ViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginBoard" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="이메일로 로그인"/>
                                         <connections>
-                                            <segue destination="ko0-Jg-v6p" kind="presentation" id="gOW-BP-Jjw"/>
+                                            <action selector="emailLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2ow-lX-Dt1"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQi-zU-l4W">
@@ -74,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="138"/>
+            <point key="canvasLocation" x="168" y="-193"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="oVc-d4-RmU">
@@ -90,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SPm-PY-bNM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1046" y="1357"/>
+            <point key="canvasLocation" x="1031" y="1400"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="lTO-dP-UPW">
@@ -106,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJt-bn-Jtp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047" y="713"/>
+            <point key="canvasLocation" x="280" y="1400"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="58I-DO-7Jt">
@@ -125,7 +125,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDb-c8-iZl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="168" y="2074"/>
+            <point key="canvasLocation" x="1031" y="670"/>
         </scene>
         <!--내 정보-->
         <scene sceneID="D9O-Uy-07J">
@@ -152,18 +152,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vqu-Do-7Hk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1034" y="2001"/>
+            <point key="canvasLocation" x="1760" y="1400"/>
         </scene>
-        <!--Login Controller-->
+        <!--Email Login Controller-->
         <scene sceneID="d0r-xG-G5z">
             <objects>
-                <viewController storyboardIdentifier="loginBoard" id="ko0-Jg-v6p" customClass="LoginController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="emailLoginBoard" id="ko0-Jg-v6p" customClass="EmailLoginController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AZ5-42-Mot">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lmd-Bu-PoG">
-                                <rect key="frame" x="16" y="44" width="358" height="716"/>
+                                <rect key="frame" x="16" y="44" width="358" height="770"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fid-ox-nva">
                                         <rect key="frame" x="0.0" y="0.0" width="358" height="40"/>
@@ -176,8 +176,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="&lt; 뒤로가기"/>
                                                 <connections>
-                                                    <action selector="stackBack:" destination="nh3-Un-2uW" eventType="touchUpInside" id="89b-iD-2hg"/>
-                                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="B2T-Nb-OXc"/>
+                                                    <action selector="btnBack:" destination="ko0-Jg-v6p" eventType="touchUpInside" id="6bV-Cc-MoG"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6K7-ef-lcx" userLabel="space">
@@ -210,13 +209,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="TLO-ab-RYr">
-                                        <rect key="frame" x="0.0" y="340" width="358" height="164.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="340" width="358" height="178"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eHx-Xo-P0C">
-                                                <rect key="frame" x="15" y="0.0" width="328" height="20.333333333333332"/>
+                                                <rect key="frame" x="15" y="0.0" width="328" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6f-d9-nks">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="20.333333333333332"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Waf-yh-hwX"/>
                                                         </constraints>
@@ -225,9 +224,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H7S-Hw-V4w">
-                                                        <rect key="frame" x="108" y="0.0" width="220" height="20.333333333333332"/>
+                                                        <rect key="frame" x="108" y="0.0" width="220" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="220" id="2dP-ld-sJd"/>
+                                                            <constraint firstAttribute="height" constant="34" id="TcL-q9-Pit"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="email"/>
@@ -235,7 +235,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EHb-kN-UiX">
-                                                <rect key="frame" x="15" y="65.333333333333314" width="328" height="34"/>
+                                                <rect key="frame" x="15" y="79" width="328" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbh-2F-qvo">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="34"/>
@@ -258,7 +258,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9be-5z-GNt">
-                                                <rect key="frame" x="129" y="144.33333333333337" width="100" height="20"/>
+                                                <rect key="frame" x="129" y="158" width="100" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="CKX-6K-7j6"/>
                                                     <constraint firstAttribute="width" constant="100" id="Dct-3l-FfU"/>
@@ -266,13 +266,13 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="로그인"/>
                                                 <connections>
-                                                    <action selector="btnLogin:" destination="ko0-Jg-v6p" eventType="touchUpInside" id="cHT-CO-Csx"/>
+                                                    <action selector="btnLogin:" destination="ko0-Jg-v6p" eventType="touchUpInside" id="oD4-C8-tQz"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5K-Gs-Am2" userLabel="space">
-                                        <rect key="frame" x="0.0" y="504.33333333333337" width="358" height="100"/>
+                                        <rect key="frame" x="0.0" y="518" width="358" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="XPt-Nv-S2d"/>
                                         </constraints>
@@ -281,21 +281,21 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입하고 시작하기" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icD-Jk-Br5">
-                                        <rect key="frame" x="0.0" y="604.33333333333337" width="358" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="618" width="358" height="20.333333333333371"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wy9-ik-wDh">
-                                        <rect key="frame" x="0.0" y="604.33333333333337" width="358" height="26"/>
+                                        <rect key="frame" x="0.0" y="638.33333333333337" width="358" height="46"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="회원가입"/>
                                         <connections>
-                                            <segue destination="36H-ih-NOz" kind="presentation" modalPresentationStyle="fullScreen" id="13b-9d-iL0"/>
+                                            <action selector="btnSignUp:" destination="ko0-Jg-v6p" eventType="touchUpInside" id="D44-e4-umN"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ny7-kP-LrV" userLabel="space">
-                                        <rect key="frame" x="0.0" y="630.33333333333337" width="358" height="85.666666666666629"/>
+                                        <rect key="frame" x="0.0" y="684.33333333333337" width="358" height="85.666666666666629"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -314,9 +314,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="9dI-rI-hn8"/>
                     <connections>
-                        <outlet property="btnLogin" destination="9be-5z-GNt" id="TiB-au-p3Y"/>
-                        <outlet property="txtEmail" destination="H7S-Hw-V4w" id="W58-aJ-VIH"/>
-                        <outlet property="txtPassword" destination="Thf-Lw-wbu" id="4f1-3n-EAR"/>
+                        <outlet property="btnLogin" destination="9be-5z-GNt" id="Nb2-UQ-UUH"/>
+                        <outlet property="txtEmail" destination="H7S-Hw-V4w" id="P5t-pQ-Byu"/>
+                        <outlet property="txtPassword" destination="Thf-Lw-wbu" id="IN7-sw-a69"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kti-Ul-nPL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -333,7 +333,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wtK-jd-5Of">
-                                <rect key="frame" x="16" y="30" width="358" height="872"/>
+                                <rect key="frame" x="16" y="30" width="358" height="767"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="itf-UC-rf1">
                                         <rect key="frame" x="0.0" y="0.0" width="358" height="40"/>
@@ -346,8 +346,8 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="&lt; 뒤로가기"/>
                                                 <connections>
+                                                    <action selector="btnBack:" destination="3bf-yH-nFV" eventType="touchUpInside" id="1as-4x-4An"/>
                                                     <action selector="stackBack:" destination="nh3-Un-2uW" eventType="touchUpInside" id="2Bw-he-dT8"/>
-                                                    <segue destination="ko0-Jg-v6p" kind="presentation" modalPresentationStyle="fullScreen" id="zbc-HL-4Oe"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Z4-63-Sbm" userLabel="space">
@@ -502,17 +502,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1m-l6-2iS" userLabel="space">
-                                        <rect key="frame" x="0.0" y="687" width="358" height="160"/>
+                                        <rect key="frame" x="0.0" y="687" width="358" height="80"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="160" id="0Vo-an-h2d"/>
+                                            <constraint firstAttribute="height" constant="80" id="0Vo-an-h2d"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="bU8-mo-Mpp">
-                                        <rect key="frame" x="0.0" y="847" width="358" height="25"/>
-                                    </pageControl>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -522,7 +519,6 @@
                             <constraint firstItem="wtK-jd-5Of" firstAttribute="trailing" secondItem="EpL-3I-L4x" secondAttribute="trailingMargin" id="AhD-Rf-wPw"/>
                             <constraint firstItem="wtK-jd-5Of" firstAttribute="top" secondItem="EpL-3I-L4x" secondAttribute="top" constant="30" id="Zco-Xe-TpT"/>
                             <constraint firstItem="wtK-jd-5Of" firstAttribute="leading" secondItem="EpL-3I-L4x" secondAttribute="leadingMargin" id="frg-1A-loS"/>
-                            <constraint firstAttribute="bottom" secondItem="wtK-jd-5Of" secondAttribute="bottom" constant="20" id="ypa-EV-NaS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="31z-n9-Wcu"/>
@@ -530,13 +526,13 @@
                         <outlet property="btnNext" destination="26z-GI-kZh" id="Cg3-RR-bKQ"/>
                         <outlet property="lblEmailCheck" destination="p4F-fB-xZE" id="pID-1n-MFF"/>
                         <outlet property="lblPasswordCheck" destination="Pl0-wt-cdY" id="bec-79-Co2"/>
-                        <outlet property="pageControl" destination="bU8-mo-Mpp" id="99w-Jm-b8a"/>
                         <outlet property="txtEmail" destination="5zQ-tD-Zgv" id="dxJ-bd-bjV"/>
                         <outlet property="txtPassword" destination="YAa-2H-dYs" id="w9x-0w-KmX"/>
                         <outlet property="txtPasswordCheck" destination="FUX-Od-8Gp" id="yLk-eJ-fNe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YWh-oQ-g3F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="3bf-yH-nFV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1760" y="-193"/>
         </scene>
@@ -584,7 +580,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="aAE-3N-E3W">
-                                        <rect key="frame" x="0.0" y="190" width="358" height="491"/>
+                                        <rect key="frame" x="0.0" y="190" width="358" height="494"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ut2-kV-2fe">
                                                 <rect key="frame" x="15" y="0.0" width="328" height="34"/>
@@ -607,12 +603,15 @@
                                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                     </textField>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="wvX-U7-ewP"/>
+                                                </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XqV-HW-rrg">
-                                                <rect key="frame" x="15" y="79" width="328" height="31"/>
+                                                <rect key="frame" x="15" y="79" width="328" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNe-LR-ecc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="31"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="6LX-mF-5YZ"/>
                                                         </constraints>
@@ -621,7 +620,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bu5-lg-cLz">
-                                                        <rect key="frame" x="108" y="0.0" width="220" height="32"/>
+                                                        <rect key="frame" x="108" y="0.0" width="220" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="XcR-aX-mzg"/>
                                                         </constraints>
@@ -630,13 +629,16 @@
                                                             <segment title="여성"/>
                                                         </segments>
                                                         <connections>
-                                                            <action selector="changeSex:" destination="4fr-xN-Evs" eventType="valueChanged" id="Vo1-Y0-Tpz"/>
+                                                            <action selector="changeGender:" destination="4fr-xN-Evs" eventType="valueChanged" id="6QU-vV-oM9"/>
                                                         </connections>
                                                     </segmentedControl>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="wwb-cU-eRi"/>
+                                                </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Sj4-ba-btN">
-                                                <rect key="frame" x="15" y="155" width="328" height="34"/>
+                                                <rect key="frame" x="15" y="158" width="328" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생년월일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6l-fr-J1D">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="34"/>
@@ -662,7 +664,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bhT-Qa-ruv">
-                                                <rect key="frame" x="15" y="234" width="328" height="34"/>
+                                                <rect key="frame" x="15" y="237" width="328" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴대번호" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GM7-nd-H3s">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="34"/>
@@ -685,7 +687,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1QE-7o-ewY">
-                                                <rect key="frame" x="15" y="313" width="328" height="34"/>
+                                                <rect key="frame" x="15" y="316" width="328" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKU-hH-6aX">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="34"/>
@@ -708,7 +710,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fE1-L2-dOt">
-                                                <rect key="frame" x="15" y="392" width="328" height="34"/>
+                                                <rect key="frame" x="15" y="395" width="328" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상세주소" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8BY-zW-c8W">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="34"/>
@@ -731,7 +733,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHB-dx-BID">
-                                                <rect key="frame" x="129" y="471" width="100" height="20"/>
+                                                <rect key="frame" x="129" y="474" width="100" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="16b-Uw-16Y"/>
                                                     <constraint firstAttribute="height" constant="20" id="8T0-oU-yOf"/>
@@ -739,23 +741,17 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="정보 입력"/>
                                                 <connections>
-                                                    <action selector="btnJoin:" destination="4fr-xN-Evs" eventType="touchUpInside" id="Jhd-oI-8bo"/>
+                                                    <action selector="btnInsert:" destination="4fr-xN-Evs" eventType="touchUpInside" id="xev-nO-pdI"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKQ-GI-2Eh" userLabel="space">
-                                        <rect key="frame" x="0.0" y="681" width="358" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="HM2-Y7-gjj"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="684" width="358" height="130"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="y1J-g4-X1T">
-                                        <rect key="frame" x="0.0" y="781" width="358" height="33"/>
-                                    </pageControl>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -770,8 +766,7 @@
                     </view>
                     <connections>
                         <outlet property="btnJoin" destination="aHB-dx-BID" id="7RX-D7-Bix"/>
-                        <outlet property="pageControl" destination="y1J-g4-X1T" id="Hs4-zA-6jQ"/>
-                        <outlet property="sgSex" destination="bu5-lg-cLz" id="idX-ho-z4C"/>
+                        <outlet property="sgGender" destination="bu5-lg-cLz" id="9cD-Yk-Sba"/>
                         <outlet property="txtAddress1" destination="2JJ-Qa-JX0" id="In5-ak-bvH"/>
                         <outlet property="txtAddress2" destination="SsT-di-sJU" id="jBW-US-5kL"/>
                         <outlet property="txtBirthday" destination="7GF-Bc-Q54" id="wkt-iG-WHd"/>
@@ -784,9 +779,6 @@
             <point key="canvasLocation" x="2511" y="-193"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="gOW-BP-Jjw"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

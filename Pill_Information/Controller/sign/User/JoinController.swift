@@ -21,7 +21,6 @@ class JoinController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtPasswordCheck: UITextField!
-    @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var lblEmailCheck: UILabel!
     @IBOutlet weak var lblPasswordCheck: UILabel!
@@ -33,21 +32,11 @@ class JoinController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         btnNext.isEnabled = false
-        initPageControl()
         initTextField()
         
         lblEmailCheck.text = ""
         lblPasswordCheck.text = ""
         
-    }
-    
-    
-    /// 페이지 컨트롤 초기 설정
-    func initPageControl() {
-        pageControl.numberOfPages = 2   // 페이지 총 개수
-        pageControl.currentPage = 0             // 현재 페이지
-        pageControl.pageIndicatorTintColor = UIColor.gray   // 다른 페이지 색상
-        pageControl.currentPageIndicatorTintColor = UIColor.blue    // 현재 페이지 색상
     }
     
     
@@ -123,14 +112,6 @@ class JoinController: UIViewController, UITextFieldDelegate {
                     present(alertCon, animated: true, completion: nil)
                 }
             }
-//            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "profileInitBoard")as? profileInitController else {return}
-//
-//            vcName.email_ = self.txtEmail.text ?? ""
-//            vcName.pass_ = self.txtPassword.text ?? ""
-//
-//            vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
-//            vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
-//            self.present(vcName, animated: true, completion: nil)
         }
     }
     
@@ -180,7 +161,7 @@ class JoinController: UIViewController, UITextFieldDelegate {
     
     func changeView(viewName: String) {
         if viewName == "loginView" {
-            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "loginBoard")as? LoginController else {return}
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "emailLoginBoard")as? EmailLoginController else {return}
             
             vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정

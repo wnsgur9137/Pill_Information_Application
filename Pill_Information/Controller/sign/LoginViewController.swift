@@ -7,13 +7,15 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
+//import FirebaseStorage
 import AuthenticationServices
 import CryptoKit
 import GoogleSignIn
 
 // 애플 로그인 시작
 private var currentNonce: String?
-extension ViewController: ASAuthorizationControllerDelegate {
+extension LoginViewController: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
             /*
@@ -57,7 +59,7 @@ extension ViewController: ASAuthorizationControllerDelegate {
 
 
 // Apple Sign in
-extension ViewController {
+extension LoginViewController {
     func startSignInWithAppleFlow() {
         let nonce = randomNonceString()
         currentNonce = nonce
@@ -116,7 +118,7 @@ extension ViewController {
     }
 }
 
-extension ViewController : ASAuthorizationControllerPresentationContextProviding {
+extension LoginViewController : ASAuthorizationControllerPresentationContextProviding {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return self.view.window!
     }
@@ -124,7 +126,9 @@ extension ViewController : ASAuthorizationControllerPresentationContextProviding
 // 애플 로그인 끝
 
 
-class ViewController: UIViewController {
+
+
+class LoginViewController: UIViewController {
     
     @IBOutlet weak var btnEmailLogin: UIButton!
     @IBOutlet weak var btnAppleLogin: UIButton!
@@ -149,24 +153,25 @@ class ViewController: UIViewController {
         let pwd:String?
         
         if let userEmail = UserDefaults.standard.string(forKey: "email") {
+            print("\n\n자동 로그인 체크\n\n")
             uid = userEmail
             pwd = UserDefaults.standard.string(forKey: "pwd")
             Auth.auth().signIn(withEmail: uid!, password: pwd!) { (user, error) in
                 if user != nil {
-                    self.gotoMainController()
+                    self.changeView(viewName: "main")
                 } else {
                     self.messageAlert(controllerTitle: "로그인 실패", controllerMessage: "로그인 실패", actionTitle: "확인")
                 }
             }
-            gotoMainController()
         }
+        
         let user = Auth.auth().currentUser
         if user == nil {
             print("\n\n user is nil \n\n")
         } else {
-            print("\n\n user loing \n\n")
-            gotoMainController()
+            changeView(viewName: "main")
         }
+        
     }
     
     @IBAction func appleLogin(_ sender: UIButton) {
@@ -178,15 +183,12 @@ class ViewController: UIViewController {
         GIDSignIn.sharedInstance().signIn()
     }
     
-    func gotoMainController() {
-        print("\n\ngotoMainCotnroller\n\n")
-        guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "mainBoard")as? UITabBarController else {return}
-        
-        vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
-        vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
-        self.present(vcName, animated: true, completion: nil)
+    @IBAction func emailLogin(_ sender: UIButton) {
+        changeView(viewName: "email")
     }
     
+    
+
     /// Alert 출력
     /// - Parameters:
     ///   - controllerTitle: Alert Title
@@ -197,6 +199,22 @@ class ViewController: UIViewController {
         let alertAct = UIAlertAction(title: actionTitle, style: UIAlertAction.Style.default)
         alertCon.addAction(alertAct)
         present(alertCon, animated: true, completion: nil)
+    }
+    
+    func changeView(viewName: String) {
+        if viewName == "main" {
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "mainBoard")as? UITabBarController else {return}
+            
+            vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
+            vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
+            self.present(vcName, animated: true, completion: nil)
+        } else if viewName == "email" {
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "emailLoginBoard")as? EmailLoginController else {return}
+            
+            vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
+            vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
+            self.present(vcName, animated: true, completion: nil)
+        }
     }
 
 }

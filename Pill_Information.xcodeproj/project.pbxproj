@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		669543192865859C00584636 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669543182865859C00584636 /* LoginController.swift */; };
+		669543192865859C00584636 /* EmailLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669543182865859C00584636 /* EmailLoginController.swift */; };
 		6695431B28658BC400584636 /* JoinController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695431A28658BC400584636 /* JoinController.swift */; };
 		66AD6E59286D7AF600D24FC6 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AD6E58286D7AF600D24FC6 /* MyProfileViewController.swift */; };
+		66AD6E5B286EAEB600D24FC6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AD6E5A286EAEB600D24FC6 /* MainViewController.swift */; };
 		66B10D4B286547CE00CEE1FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B10D4A286547CE00CEE1FA /* AppDelegate.swift */; };
 		66B10D4D286547CE00CEE1FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B10D4C286547CE00CEE1FA /* SceneDelegate.swift */; };
-		66B10D4F286547CE00CEE1FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B10D4E286547CE00CEE1FA /* ViewController.swift */; };
+		66B10D4F286547CE00CEE1FA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B10D4E286547CE00CEE1FA /* LoginViewController.swift */; };
 		66B10D52286547CE00CEE1FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66B10D50286547CE00CEE1FA /* Main.storyboard */; };
 		66B10D54286547CF00CEE1FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66B10D53286547CF00CEE1FA /* Assets.xcassets */; };
 		66B10D57286547CF00CEE1FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66B10D55286547CF00CEE1FA /* LaunchScreen.storyboard */; };
@@ -23,14 +24,15 @@
 
 /* Begin PBXFileReference section */
 		38B266B3AFAFF3C632C92607 /* Pods_Pill_Information.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pill_Information.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		669543182865859C00584636 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		669543182865859C00584636 /* EmailLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginController.swift; sourceTree = "<group>"; };
 		6695431A28658BC400584636 /* JoinController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinController.swift; sourceTree = "<group>"; };
 		669C4462286D2D520040A6C4 /* Pill_Information.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pill_Information.entitlements; sourceTree = "<group>"; };
 		66AD6E58286D7AF600D24FC6 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		66AD6E5A286EAEB600D24FC6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		66B10D47286547CE00CEE1FA /* Pill_Information.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pill_Information.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B10D4A286547CE00CEE1FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66B10D4C286547CE00CEE1FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		66B10D4E286547CE00CEE1FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		66B10D4E286547CE00CEE1FA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		66B10D51286547CE00CEE1FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		66B10D53286547CF00CEE1FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66B10D56286547CF00CEE1FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,7 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				66C0C06A2869498B007967A0 /* User */,
-				66B10D4E286547CE00CEE1FA /* ViewController.swift */,
+				66B10D4E286547CE00CEE1FA /* LoginViewController.swift */,
 			);
 			path = sign;
 			sourceTree = "<group>";
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				66AD6E58286D7AF600D24FC6 /* MyProfileViewController.swift */,
+				66AD6E5A286EAEB600D24FC6 /* MainViewController.swift */,
 			);
 			path = tab;
 			sourceTree = "<group>";
@@ -133,7 +136,7 @@
 		66C0C06A2869498B007967A0 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				669543182865859C00584636 /* LoginController.swift */,
+				669543182865859C00584636 /* EmailLoginController.swift */,
 				6695431A28658BC400584636 /* JoinController.swift */,
 				66C0C06628694806007967A0 /* profileInitController.swift */,
 			);
@@ -274,13 +277,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66B10D4F286547CE00CEE1FA /* ViewController.swift in Sources */,
-				669543192865859C00584636 /* LoginController.swift in Sources */,
+				66B10D4F286547CE00CEE1FA /* LoginViewController.swift in Sources */,
+				669543192865859C00584636 /* EmailLoginController.swift in Sources */,
 				66B10D4B286547CE00CEE1FA /* AppDelegate.swift in Sources */,
 				6695431B28658BC400584636 /* JoinController.swift in Sources */,
 				66B10D4D286547CE00CEE1FA /* SceneDelegate.swift in Sources */,
 				66AD6E59286D7AF600D24FC6 /* MyProfileViewController.swift in Sources */,
 				66C0C06728694806007967A0 /* profileInitController.swift in Sources */,
+				66AD6E5B286EAEB600D24FC6 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

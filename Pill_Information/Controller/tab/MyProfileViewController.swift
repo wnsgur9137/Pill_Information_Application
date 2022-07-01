@@ -20,7 +20,7 @@ class MyProfileViewController: UIViewController {
 
     @IBAction func logOut(_ sender: UIButton) {
         logoutTapped()
-        changeView(viewName: "ViewController")
+        changeView(viewName: "login")
     }
     
     func logoutTapped() {
@@ -42,8 +42,8 @@ class MyProfileViewController: UIViewController {
     }
     
     func changeView(viewName: String) {
-        if viewName == "ViewController" {
-            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "viewBoard")as? ViewController else {return}
+        if viewName == "login" {
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "loginBoard")as? LoginViewController else {return}
             
             vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
