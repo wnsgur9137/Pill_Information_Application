@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6619132B2872B74B004185AA /* ProfileUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6619132A2872B74B004185AA /* ProfileUpdateViewController.swift */; };
 		669543192865859C00584636 /* EmailLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669543182865859C00584636 /* EmailLoginController.swift */; };
 		6695431B28658BC400584636 /* JoinController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695431A28658BC400584636 /* JoinController.swift */; };
 		66AD6E59286D7AF600D24FC6 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AD6E58286D7AF600D24FC6 /* MyProfileViewController.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		38B266B3AFAFF3C632C92607 /* Pods_Pill_Information.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pill_Information.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6619132A2872B74B004185AA /* ProfileUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateViewController.swift; sourceTree = "<group>"; };
 		669543182865859C00584636 /* EmailLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginController.swift; sourceTree = "<group>"; };
 		6695431A28658BC400584636 /* JoinController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinController.swift; sourceTree = "<group>"; };
 		669C4462286D2D520040A6C4 /* Pill_Information.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pill_Information.entitlements; sourceTree = "<group>"; };
@@ -72,6 +74,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		661913292872B72F004185AA /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				66AD6E58286D7AF600D24FC6 /* MyProfileViewController.swift */,
+				6619132A2872B74B004185AA /* ProfileUpdateViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		665FAE2B286C1C8900B85A32 /* sign */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,7 +95,7 @@
 		665FAE2C286C1C9F00B85A32 /* tab */ = {
 			isa = PBXGroup;
 			children = (
-				66AD6E58286D7AF600D24FC6 /* MyProfileViewController.swift */,
+				661913292872B72F004185AA /* Profile */,
 				66AD6E5A286EAEB600D24FC6 /* MainViewController.swift */,
 			);
 			path = tab;
@@ -280,6 +291,7 @@
 				66B10D4F286547CE00CEE1FA /* LoginViewController.swift in Sources */,
 				669543192865859C00584636 /* EmailLoginController.swift in Sources */,
 				66B10D4B286547CE00CEE1FA /* AppDelegate.swift in Sources */,
+				6619132B2872B74B004185AA /* ProfileUpdateViewController.swift in Sources */,
 				6695431B28658BC400584636 /* JoinController.swift in Sources */,
 				66B10D4D286547CE00CEE1FA /* SceneDelegate.swift in Sources */,
 				66AD6E59286D7AF600D24FC6 /* MyProfileViewController.swift in Sources */,

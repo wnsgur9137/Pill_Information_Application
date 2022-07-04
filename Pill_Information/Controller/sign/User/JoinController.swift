@@ -79,12 +79,17 @@ class JoinController: UIViewController, UITextFieldDelegate {
     }
     
     
+    /// 텍스트필드 형식 검사 함수
+    /// - Parameters:
+    ///   - str: 검사할 문자열
+    ///   - textField: 검사할 문자열이 담긴 텍스트 필드(이에 따라 검사 방법이 달라짐)
+    /// - Returns: 형식이 알맞은지 true, false로 반환함.
     func isValid(str: String, textField:UITextField) -> Bool {
-        if textField == txtEmail {
+        if textField == txtEmail {  // 이메일 형식
             let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
             let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
             return emailTest.evaluate(with: str)
-        } else {
+        } else {    // 비밀번호 형식 (숫자, 문자 포함 8자 이상)
             let passwordRegEx = "^[a-zA-Z0-9]{8,}$"
             let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
             return passwordTest.evaluate(with: str)
@@ -99,12 +104,13 @@ class JoinController: UIViewController, UITextFieldDelegate {
         if txtPassword.text != txtPasswordCheck.text {
             messageAlert(controllerTitle: "경고", controllerMessage: "비밀번호가 일치하지 않습니다.", actionTitle: "확인")
         } else {
+            // 유저 생성
             Auth.auth().createUser(withEmail: txtEmail.text!, password: txtPassword.text!) { [self]authResult, error in
                 
     //            let uid = authResult?.user.uid
-                if let _ = error {
+                if let _ = error { // 유저 생성에 실패할 경우
                     self.messageAlert(controllerTitle: "회원가입 실패", controllerMessage: "중복된 이메일/핸드폰 번호입니다.", actionTitle: "확인")
-                } else {
+                } else { // 유저 생성에 성공할 경우
                     let alertCon = UIAlertController(title: "회원가입 성공", message: "회원가입에 성공하였습니다.", preferredStyle: UIAlertController.Style.alert)
                     let alertAct = UIAlertAction(title: "로그인", style: UIAlertAction.Style.default, handler:  { (action) in
                         self.changeView(viewName: "loginView") })
@@ -159,6 +165,9 @@ class JoinController: UIViewController, UITextFieldDelegate {
         present(alertCon, animated: true, completion: nil)
     }
     
+    
+    /// 화면 전환 함수
+    /// - Parameter viewName: 어떤 화면을 전환할지 정할 문자열
     func changeView(viewName: String) {
         if viewName == "loginView" {
             guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "emailLoginBoard")as? EmailLoginController else {return}

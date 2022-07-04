@@ -83,15 +83,23 @@ class EmailLoginController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    
+    /// 회원가입 버튼 클릭 시 회원가입 화면으로 전환
+    /// - Parameter sender: 회원가입 버튼
     @IBAction func btnSignUp(_ sender: UIButton) {
         changeView(viewName: "signUp")
     }
     
+    
+    /// 뒤로가기 버튼 클릭 시 초기 로그인 화면으로 전환
+    /// - Parameter sender:뒤로가기 버튼
     @IBAction func btnBack(_ sender: UIButton) {
         changeView(viewName: "login")
     }
     
     
+    /// 화면 전환 함수
+    /// - Parameter viewName: 어떤 화면을 전환할지 정할 문자열
     func changeView(viewName: String) {
         if viewName == "main" {
             guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "mainBoard")as? UITabBarController else {return}

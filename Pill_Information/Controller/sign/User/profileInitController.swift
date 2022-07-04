@@ -45,6 +45,9 @@ class profileInitController: UIViewController, UITextFieldDelegate {
         txtPhone.keyboardType = .phonePad
     }
     
+    
+    /// 모든 텍스트 필드 공백 검사
+    /// - Parameter textField: 텍스트 필드
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if txtName.text == "" || txtBirthday.text == "" ||
             txtPhone.text == "" || txtAddress1.text == "" ||
@@ -83,6 +86,8 @@ class profileInitController: UIViewController, UITextFieldDelegate {
     }
 
     
+    /// 성별 선택
+    /// - Parameter sender: sgGender
     @IBAction func changeGender(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             gender = "남"
@@ -91,6 +96,9 @@ class profileInitController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    
+    /// 정보 입력 버튼
+    /// - Parameter sender: btnJoin
     @IBAction func btnInsert(_ sender: UIButton) {
         let email = UserDefaults.standard.string(forKey: "email")
         let user = Auth.auth().currentUser
@@ -118,6 +126,10 @@ class profileInitController: UIViewController, UITextFieldDelegate {
         self.txtAddress2.resignFirstResponder()
     }
     
+    
+    /// 키보드에서 Return(Enter)를 입력할 경우
+    /// - Parameter textField: 현재 선택된 텍스트 필드.
+    /// - Returns: 리턴 값(true)
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == txtName {
             txtName.resignFirstResponder()
@@ -153,6 +165,8 @@ class profileInitController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    /// 화면 전환 함수
+    /// - Parameter viewName: 어떤 화면을 전환할지 정할 문자열
     func changeView(viewName: String) {
         if viewName == "main" {
             guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "mainBoard")as? UITabBarController else {return}
@@ -169,7 +183,4 @@ class profileInitController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func goLoginBoard() {
-        
-    }
 }

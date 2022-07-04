@@ -13,7 +13,9 @@ import AuthenticationServices
 import CryptoKit
 import GoogleSignIn
 
-// 애플 로그인 시작
+
+// MARK: - Apple Login
+
 private var currentNonce: String?
 extension LoginViewController: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
@@ -127,6 +129,7 @@ extension LoginViewController : ASAuthorizationControllerPresentationContextProv
 
 
 
+// MARK: - LoginViewController
 
 class LoginViewController: UIViewController {
     
@@ -147,11 +150,14 @@ class LoginViewController: UIViewController {
 //        GIDSignIn.sharedInstance().signIn()
     }
 
+    
+    /// 로그인 체크
     func checkLogin() {
         
         let uid:String?
         let pwd:String?
         
+        // 자동 로그인 실행
         if let userEmail = UserDefaults.standard.string(forKey: "email") {
             print("\n\n자동 로그인 체크\n\n")
             uid = userEmail
@@ -165,24 +171,33 @@ class LoginViewController: UIViewController {
             }
         }
         
+        // 로그인이 되어있다면 메인 화면으로 전환
         let user = Auth.auth().currentUser
         if user == nil {
             print("\n\n user is nil \n\n")
         } else {
             changeView(viewName: "main")
         }
-        
     }
     
+    
+    /// 애플 로그인
+    /// - Parameter sender: btnAppleLogin
     @IBAction func appleLogin(_ sender: UIButton) {
         startSignInWithAppleFlow()
     }
+
     
+    /// 구글 로그인
+    /// - Parameter sender: btnGoogleLogin
     @IBAction func googleLogin(_ sender: UIButton) {
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance().signIn()
     }
     
+    
+    /// 이메일 로그인
+    /// - Parameter sender: btnEmailLogin
     @IBAction func emailLogin(_ sender: UIButton) {
         changeView(viewName: "email")
     }
@@ -201,14 +216,17 @@ class LoginViewController: UIViewController {
         present(alertCon, animated: true, completion: nil)
     }
     
+    
+    /// 화면 전환 함수
+    /// - Parameter viewName: 어떤 화면을 전환할지 정할 문자열
     func changeView(viewName: String) {
-        if viewName == "main" {
+        if viewName == "main" { // 메인 화면 전환
             guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "mainBoard")as? UITabBarController else {return}
             
             vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
             self.present(vcName, animated: true, completion: nil)
-        } else if viewName == "email" {
+        } else if viewName == "email" { // 이메일 로그인 화면 전환
             guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "emailLoginBoard")as? EmailLoginController else {return}
             
             vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
