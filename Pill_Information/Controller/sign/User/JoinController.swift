@@ -74,6 +74,7 @@ class JoinController: UIViewController, UITextFieldDelegate {
             txtPasswordCheck.becomeFirstResponder()
         } else {
             txtPasswordCheck.resignFirstResponder()
+            signUp(btnNext)
         }
         return true
     }
@@ -100,7 +101,7 @@ class JoinController: UIViewController, UITextFieldDelegate {
     /// 다음 버튼
     ///  이메일과 비밀번호를 확인한 뒤 버튼이 활성화 됨.
     /// - Parameter sender: 다음 버튼
-    @IBAction func singUp(_ sender: UIButton) {
+    @IBAction func signUp(_ sender: UIButton) {
         if txtPassword.text != txtPasswordCheck.text {
             messageAlert(controllerTitle: "경고", controllerMessage: "비밀번호가 일치하지 않습니다.", actionTitle: "확인")
         } else {
@@ -113,12 +114,15 @@ class JoinController: UIViewController, UITextFieldDelegate {
                 } else { // 유저 생성에 성공할 경우
                     let alertCon = UIAlertController(title: "회원가입 성공", message: "회원가입에 성공하였습니다.", preferredStyle: UIAlertController.Style.alert)
                     let alertAct = UIAlertAction(title: "로그인", style: UIAlertAction.Style.default, handler:  { (action) in
-                        self.changeView(viewName: "loginView") })
+                        self.changeView(viewName: "emailLoginView") })
                     alertCon.addAction(alertAct)
                     present(alertCon, animated: true, completion: nil)
                 }
             }
         }
+    }
+    @IBAction func btnBack(_ sender: UIButton) {
+        changeView(viewName: "emailLoginView")
     }
     
     /// 모든 텍스트필드의 공백을 검사, 이메일 형식, 비밀번호 형식 검사
@@ -169,7 +173,7 @@ class JoinController: UIViewController, UITextFieldDelegate {
     /// 화면 전환 함수
     /// - Parameter viewName: 어떤 화면을 전환할지 정할 문자열
     func changeView(viewName: String) {
-        if viewName == "loginView" {
+        if viewName == "emailLoginView" {
             guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "emailLoginBoard")as? EmailLoginController else {return}
             
             vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정

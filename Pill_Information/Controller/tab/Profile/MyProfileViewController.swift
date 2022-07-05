@@ -22,7 +22,6 @@ class MyProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         profileLoad()
     }
     
@@ -31,6 +30,8 @@ class MyProfileViewController: UIViewController {
     /// 로그아웃 버튼(자동로그인 해제, 로그아웃)
     /// - Parameter sender: 로그아웃 버튼
     @IBAction func logOut(_ sender: UIButton) {
+        
+        
         logoutTapped()
         changeView(viewName: "login")
     }
@@ -81,7 +82,7 @@ class MyProfileViewController: UIViewController {
     }
     
     @IBAction func btnProfileUpdate(_ sender: UIButton) {
-        changeView(viewName: "profileUpdate")
+        changeView(viewName: "passwordCheck")
     }
     
     
@@ -94,13 +95,25 @@ class MyProfileViewController: UIViewController {
             vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
             self.present(vcName, animated: true, completion: nil)
-        } else if viewName == "profileUpdate" {
-            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "profileUpdateBoard")as? ProfileUpdateViewController else {return}
+        } else if viewName == "passwordCheck" {
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "passwordCheckBoard")as? PasswordCheckViewController else {return}
             
             vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
             self.present(vcName, animated: true, completion: nil)
         }
+    }
+    
+    /// Alert 출력
+    /// - Parameters:
+    ///   - controllerTitle: Alert Title
+    ///   - controllerMessage: Alert Message
+    ///   - actionTitle: action(button content)
+    func messageAlert(controllerTitle:String, controllerMessage:String, actionTitle:String) {
+        let alertCon = UIAlertController(title: controllerTitle, message: controllerMessage, preferredStyle: UIAlertController.Style.alert)
+        let alertAct = UIAlertAction(title: actionTitle, style: UIAlertAction.Style.default)
+        alertCon.addAction(alertAct)
+        present(alertCon, animated: true, completion: nil)
     }
 
 }

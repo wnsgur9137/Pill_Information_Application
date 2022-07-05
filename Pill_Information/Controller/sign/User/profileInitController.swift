@@ -139,6 +139,7 @@ class profileInitController: UIViewController, UITextFieldDelegate {
             txtAddress2.becomeFirstResponder()
         } else {
             txtAddress2.resignFirstResponder()
+            btnInsert(btnJoin)
         }
         return true
     }

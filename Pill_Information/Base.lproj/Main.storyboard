@@ -280,7 +280,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="358" height="766"/>
                                         <items>
                                             <navigationItem title="Title" id="eKH-vY-Z8v">
-                                                <barButtonItem key="leftBarButtonItem" title="&lt;" id="gqt-Ba-RHv">
+                                                <barButtonItem key="leftBarButtonItem" title="&lt;" image="lessthan" catalog="system" id="gqt-Ba-RHv">
                                                     <connections>
                                                         <action selector="naviBackButton:" destination="5zT-TK-nC4" id="jZE-NK-3Ok"/>
                                                     </connections>
@@ -307,6 +307,98 @@
                 </viewController>
             </objects>
             <point key="canvasLocation" x="2491" y="2065"/>
+        </scene>
+        <!--Password Check View Controller-->
+        <scene sceneID="aZG-UZ-0KB">
+            <objects>
+                <viewController storyboardIdentifier="passwordCheckBoard" id="N8j-c9-lxm" customClass="PasswordCheckViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7MM-4M-KDV">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GEu-ZL-yqO">
+                                <rect key="frame" x="16" y="44" width="358" height="452"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="J6S-Gn-P9N">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="44"/>
+                                        <subviews>
+                                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t08-jr-nUr">
+                                                <rect key="frame" x="0.0" y="0.0" width="358" height="44"/>
+                                                <items>
+                                                    <navigationItem title="비밀번호 확인" id="4r8-62-pDt">
+                                                        <barButtonItem key="leftBarButtonItem" title="Item" image="lessthan" catalog="system" id="ld5-Hq-afs">
+                                                            <connections>
+                                                                <action selector="btnBack:" destination="N8j-c9-lxm" id="3Jg-nk-hfD"/>
+                                                            </connections>
+                                                        </barButtonItem>
+                                                    </navigationItem>
+                                                </items>
+                                            </navigationBar>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5vg-gb-Oqd">
+                                        <rect key="frame" x="37" y="44" width="284" height="408"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qLJ-QG-0RL">
+                                                <rect key="frame" x="8" y="300" width="268" height="60"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5j-pT-Gno">
+                                                        <rect key="frame" x="0.0" y="20" width="68" height="20.333333333333329"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sr2-K0-22A">
+                                                        <rect key="frame" x="68" y="13" width="200" height="34"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="200" id="Zoq-gb-taW"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="1Lr-Hx-tyz"/>
+                                                </constraints>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTl-VW-bR0">
+                                                <rect key="frame" x="92" y="360" width="100" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="fEw-bi-dnO"/>
+                                                    <constraint firstAttribute="width" constant="100" id="oTf-23-mE9"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="확인"/>
+                                                <connections>
+                                                    <action selector="passwordCheck:" destination="N8j-c9-lxm" eventType="touchUpInside" id="5dP-as-SrI"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="300" leading="8" bottom="8" trailing="8"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="J6S-Gn-P9N" firstAttribute="leading" secondItem="GEu-ZL-yqO" secondAttribute="leadingMargin" id="TNo-uo-tbR"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="J6S-Gn-P9N" secondAttribute="trailing" id="bXn-1a-86j"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FIw-S9-qAJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GEu-ZL-yqO" firstAttribute="leading" secondItem="7MM-4M-KDV" secondAttribute="leadingMargin" id="ZCc-L0-rbK"/>
+                            <constraint firstItem="GEu-ZL-yqO" firstAttribute="trailing" secondItem="7MM-4M-KDV" secondAttribute="trailingMargin" id="efg-t1-Y3W"/>
+                            <constraint firstItem="GEu-ZL-yqO" firstAttribute="top" secondItem="FIw-S9-qAJ" secondAttribute="top" id="hMT-QS-Sz1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnNext" destination="fTl-VW-bR0" id="WyP-VD-VQd"/>
+                        <outlet property="txtPassword" destination="sr2-K0-22A" id="9MP-Gq-mxK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FHk-ac-QWP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1760" y="663"/>
         </scene>
         <!--calendar-->
         <scene sceneID="WV8-0t-YQR">
@@ -510,7 +602,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kti-Ul-nPL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="nh3-Un-2uW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1030.7692307692307" y="-192.65402843601896"/>
         </scene>
@@ -536,8 +627,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="&lt; 뒤로가기"/>
                                                 <connections>
-                                                    <action selector="btnBack:" destination="3bf-yH-nFV" eventType="touchUpInside" id="1as-4x-4An"/>
-                                                    <action selector="stackBack:" destination="nh3-Un-2uW" eventType="touchUpInside" id="2Bw-he-dT8"/>
+                                                    <action selector="btnBack:" destination="36H-ih-NOz" eventType="touchUpInside" id="Y16-kX-UIA"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Z4-63-Sbm" userLabel="space">
@@ -680,7 +770,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="회원가입"/>
                                                 <connections>
-                                                    <action selector="singUp:" destination="36H-ih-NOz" eventType="touchUpInside" id="htM-7q-SBt"/>
+                                                    <action selector="signUp:" destination="36H-ih-NOz" eventType="touchUpInside" id="GhE-bW-ew6"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -722,7 +812,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YWh-oQ-g3F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="3bf-yH-nFV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1760" y="-193"/>
         </scene>
@@ -971,6 +1060,7 @@
     </scenes>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="lessthan" catalog="system" width="128" height="111"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="pills" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">

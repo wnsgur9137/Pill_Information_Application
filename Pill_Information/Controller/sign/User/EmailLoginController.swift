@@ -49,6 +49,7 @@ class EmailLoginController: UIViewController, UITextFieldDelegate {
             self.txtPassword.becomeFirstResponder()
         } else {
             self.txtPassword.resignFirstResponder()
+            btnLogin(btnLogin)
         }
         return true
     }
