@@ -31,9 +31,15 @@ class MyProfileViewController: UIViewController {
     /// - Parameter sender: 로그아웃 버튼
     @IBAction func logOut(_ sender: UIButton) {
         
+        let sheet = UIAlertController(title: "로그아웃", message: "로그아웃 하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
+        sheet.addAction(UIAlertAction(title: "예", style: .destructive, handler: {_ in self.logoutTapped()}))
+        sheet.addAction(UIAlertAction(title: "아니오", style: .cancel))
+        present(sheet, animated: true)
         
-        logoutTapped()
-        changeView(viewName: "login")
+//        let sheet = UIAlertController(title: "로그아웃", message: "로그아웃 하시겠습니까?", preferredStyle: .actionSheet)
+//        sheet.addAction(UIAlertAction(title: "예", style: .destructive, handler: {_ in self.logoutTapped()}))
+//        sheet.addAction(UIAlertAction(title: "아니오", style: .cancel))
+//        present(sheet, animated: true)
     }
     
     func profileLoad() {
@@ -75,10 +81,12 @@ class MyProfileViewController: UIViewController {
             
             
             try firebaseAuth.signOut()
+            changeView(viewName: "login")
 //            self.navigationController?.popToRootViewController(animated: true)
         } catch let signOutError as NSError {
             print("ERROR: signout \(signOutError.localizedDescription)")
         }
+        
     }
     
     @IBAction func btnProfileUpdate(_ sender: UIButton) {
