@@ -29,13 +29,23 @@ class ProfileUpdateViewController: UIViewController, UITextFieldDelegate {
     private var diaryDate: Date?
     
     var gender = "남"
+    var boolPasswordCheck = false
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if !boolPasswordCheck {
+            print("plz passwordChecking")
+            changeView(viewName: "passwordCheck")
+        }
+        self.boolPasswordCheck = false
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         txtSetting()
     }
+    
     
     /// 외부 터치 시 키보드 닫기
     /// - Parameters:
@@ -183,6 +193,20 @@ class ProfileUpdateViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    
+    @IBAction func changeEmail(_ sender: UIButton) {
+        changeView(viewName: "changeEmail")
+    }
+    
+    
+    @IBAction func passwordReset(_ sender: UIButton) {
+        changeView(viewName: "passwordReset")
+    }
+    
+    @IBAction func userDelete(_ sender: UIButton) {
+        changeView(viewName: "userDelete")
+    }
+    
     /// Alert 출력
     /// 회원가입 성공 메세지일 경우 로그인 화면으로 전환
     /// - Parameters:
@@ -213,7 +237,36 @@ class ProfileUpdateViewController: UIViewController, UITextFieldDelegate {
             vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
             self.present(vcName, animated: true, completion: nil)
+        } else if viewName == "passwordCheck" {
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "passwordCheckBoard")as? PasswordCheckViewController else {return}
+            
+            vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
+            vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
+            self.present(vcName, animated: true, completion: nil)
+        } else if viewName == "changeEmail" {
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "emailChangeBoard")as? EmailChangeViewController else {return}
+            
+            vcName.boolPasswordCheck = true
+            
+            vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
+            vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
+            self.present(vcName, animated: true, completion: nil)
+        } else if viewName == "passwordReset" {
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "passwordResetBoard")as? PasswordResetViewController else {return}
+            
+            vcName.boolPasswordCheck = true
+            
+            vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
+            vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
+            self.present(vcName, animated: true, completion: nil)
+        } else if viewName == "userDelete" {
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "userDeleteBoard")as? UserDeleteViewController else {return}
+            
+            vcName.boolPasswordCheck = true
+            
+            vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
+            vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
+            self.present(vcName, animated: true, completion: nil)
         }
     }
-
 }

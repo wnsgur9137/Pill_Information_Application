@@ -58,6 +58,8 @@ class PasswordCheckViewController: UIViewController, UITextFieldDelegate {
         if viewName == "profileUpdate" {
             guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "profileUpdateBoard")as? ProfileUpdateViewController else {return}
             
+            vcName.boolPasswordCheck = true
+            
             vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
             self.present(vcName, animated: true, completion: nil)

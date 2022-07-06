@@ -21,6 +21,9 @@
 		66B10D57286547CF00CEE1FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66B10D55286547CF00CEE1FA /* LaunchScreen.storyboard */; };
 		66B10D6328654EE800CEE1FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66B10D6228654EE800CEE1FA /* GoogleService-Info.plist */; };
 		66C0C06728694806007967A0 /* profileInitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C0C06628694806007967A0 /* profileInitController.swift */; };
+		66EF363E287517860013F196 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EF363D287517860013F196 /* PasswordResetViewController.swift */; };
+		66EF364028752E5B0013F196 /* EmailChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EF363F28752E5B0013F196 /* EmailChangeViewController.swift */; };
+		66EF364228752E840013F196 /* UserDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EF364128752E840013F196 /* UserDeleteViewController.swift */; };
 		D2FA4D15348F68B63DC64C33 /* Pods_Pill_Information.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B266B3AFAFF3C632C92607 /* Pods_Pill_Information.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +46,9 @@
 		66B10D58286547CF00CEE1FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66B10D6228654EE800CEE1FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		66C0C06628694806007967A0 /* profileInitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileInitController.swift; sourceTree = "<group>"; };
+		66EF363D287517860013F196 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
+		66EF363F28752E5B0013F196 /* EmailChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailChangeViewController.swift; sourceTree = "<group>"; };
+		66EF364128752E840013F196 /* UserDeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDeleteViewController.swift; sourceTree = "<group>"; };
 		E124EF16CE62D85C5CF982DA /* Pods-Pill_Information.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill_Information.release.xcconfig"; path = "Target Support Files/Pods-Pill_Information/Pods-Pill_Information.release.xcconfig"; sourceTree = "<group>"; };
 		EF72D8D604A305331C1178DC /* Pods-Pill_Information.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill_Information.debug.xcconfig"; path = "Target Support Files/Pods-Pill_Information/Pods-Pill_Information.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +87,9 @@
 			children = (
 				66AD6E58286D7AF600D24FC6 /* MyProfileViewController.swift */,
 				6619132A2872B74B004185AA /* ProfileUpdateViewController.swift */,
+				66EF363D287517860013F196 /* PasswordResetViewController.swift */,
+				66EF363F28752E5B0013F196 /* EmailChangeViewController.swift */,
+				66EF364128752E840013F196 /* UserDeleteViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -300,7 +309,10 @@
 				66B10D4D286547CE00CEE1FA /* SceneDelegate.swift in Sources */,
 				66AD6E59286D7AF600D24FC6 /* MyProfileViewController.swift in Sources */,
 				66C0C06728694806007967A0 /* profileInitController.swift in Sources */,
+				66EF363E287517860013F196 /* PasswordResetViewController.swift in Sources */,
 				66AD6E5B286EAEB600D24FC6 /* MainViewController.swift in Sources */,
+				66EF364028752E5B0013F196 /* EmailChangeViewController.swift in Sources */,
+				66EF364228752E840013F196 /* UserDeleteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
