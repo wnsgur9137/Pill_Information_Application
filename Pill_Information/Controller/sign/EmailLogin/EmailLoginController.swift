@@ -85,6 +85,18 @@ class EmailLoginController: UIViewController, UITextFieldDelegate {
     }
     
     
+    @IBAction func searchEmail(_ sender: UIButton) {
+        changeView(viewName: "searchEmail")
+    }
+    
+    
+    @IBAction func passwordReset(_ sender: UIButton) {
+        changeView(viewName: "resetPassword")
+    }
+    
+    
+    
+    
     /// 회원가입 버튼 클릭 시 회원가입 화면으로 전환
     /// - Parameter sender: 회원가입 버튼
     @IBAction func btnSignUp(_ sender: UIButton) {
@@ -116,6 +128,18 @@ class EmailLoginController: UIViewController, UITextFieldDelegate {
             self.present(vcName, animated: true, completion: nil)
         } else if viewName == "login" {
             guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "loginBoard")as? LoginViewController else {return}
+            
+            vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
+            vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
+            self.present(vcName, animated: true, completion: nil)
+        } else if viewName == "searchEmail" {
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "searchEmailBoard")as? SearchEmailViewController else {return}
+            
+            vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
+            vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
+            self.present(vcName, animated: true, completion: nil)
+        } else if viewName == "resetPassword" {
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "searchPasswordBoard")as? SearchPasswordViewController else {return}
             
             vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정

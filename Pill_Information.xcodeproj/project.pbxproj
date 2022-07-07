@@ -21,6 +21,8 @@
 		66B10D57286547CF00CEE1FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66B10D55286547CF00CEE1FA /* LaunchScreen.storyboard */; };
 		66B10D6328654EE800CEE1FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66B10D6228654EE800CEE1FA /* GoogleService-Info.plist */; };
 		66C0C06728694806007967A0 /* profileInitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C0C06628694806007967A0 /* profileInitController.swift */; };
+		66CFB5902876A4BC00451855 /* SearchEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CFB58F2876A4BC00451855 /* SearchEmailViewController.swift */; };
+		66CFB5942876A68A00451855 /* SearchPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CFB5932876A68A00451855 /* SearchPasswordViewController.swift */; };
 		66EF363E287517860013F196 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EF363D287517860013F196 /* PasswordResetViewController.swift */; };
 		66EF364028752E5B0013F196 /* EmailChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EF363F28752E5B0013F196 /* EmailChangeViewController.swift */; };
 		66EF364228752E840013F196 /* UserDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EF364128752E840013F196 /* UserDeleteViewController.swift */; };
@@ -46,6 +48,8 @@
 		66B10D58286547CF00CEE1FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66B10D6228654EE800CEE1FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		66C0C06628694806007967A0 /* profileInitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileInitController.swift; sourceTree = "<group>"; };
+		66CFB58F2876A4BC00451855 /* SearchEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEmailViewController.swift; sourceTree = "<group>"; };
+		66CFB5932876A68A00451855 /* SearchPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPasswordViewController.swift; sourceTree = "<group>"; };
 		66EF363D287517860013F196 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
 		66EF363F28752E5B0013F196 /* EmailChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailChangeViewController.swift; sourceTree = "<group>"; };
 		66EF364128752E840013F196 /* UserDeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDeleteViewController.swift; sourceTree = "<group>"; };
@@ -97,7 +101,7 @@
 		665FAE2B286C1C8900B85A32 /* sign */ = {
 			isa = PBXGroup;
 			children = (
-				66C0C06A2869498B007967A0 /* User */,
+				66C0C06A2869498B007967A0 /* EmailLogin */,
 				66B10D4E286547CE00CEE1FA /* LoginViewController.swift */,
 			);
 			path = sign;
@@ -156,14 +160,16 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		66C0C06A2869498B007967A0 /* User */ = {
+		66C0C06A2869498B007967A0 /* EmailLogin */ = {
 			isa = PBXGroup;
 			children = (
 				669543182865859C00584636 /* EmailLoginController.swift */,
+				66CFB58F2876A4BC00451855 /* SearchEmailViewController.swift */,
 				6695431A28658BC400584636 /* JoinController.swift */,
 				66C0C06628694806007967A0 /* profileInitController.swift */,
+				66CFB5932876A68A00451855 /* SearchPasswordViewController.swift */,
 			);
-			path = User;
+			path = EmailLogin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,7 +314,9 @@
 				6695431B28658BC400584636 /* JoinController.swift in Sources */,
 				66B10D4D286547CE00CEE1FA /* SceneDelegate.swift in Sources */,
 				66AD6E59286D7AF600D24FC6 /* MyProfileViewController.swift in Sources */,
+				66CFB5942876A68A00451855 /* SearchPasswordViewController.swift in Sources */,
 				66C0C06728694806007967A0 /* profileInitController.swift in Sources */,
+				66CFB5902876A4BC00451855 /* SearchEmailViewController.swift in Sources */,
 				66EF363E287517860013F196 /* PasswordResetViewController.swift in Sources */,
 				66AD6E5B286EAEB600D24FC6 /* MainViewController.swift in Sources */,
 				66EF364028752E5B0013F196 /* EmailChangeViewController.swift in Sources */,
