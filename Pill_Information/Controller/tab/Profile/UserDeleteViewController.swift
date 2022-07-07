@@ -6,13 +6,19 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseStorage
+import FirebaseDatabase
 
 class UserDeleteViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtPasswordCheck: UITextField!
     @IBOutlet weak var btnDelete: UIButton!
+    @IBOutlet weak var lblPasswordWarning: UILabel!
     
+    var ref: DatabaseReference!
     var boolPasswordCheck = false
 
     
@@ -25,8 +31,8 @@ class UserDeleteViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.textFieldSetting()
+        lblPasswordWarning.text = ""
     }
     
     
@@ -62,13 +68,50 @@ class UserDeleteViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if txtPassword.text != txtPasswordCheck.text {
+            lblPasswordWarning.text = "비밀번호가 일치하지 않습니다."
+        } else {
+            lblPasswordWarning.text = ""
+        }
+        
+    }
+    
+    
     @IBAction func btnBack(_ sender: UIBarButtonItem) {
         changeView(viewName: "profileUpdate")
     }
     
 
     @IBAction func userDelete(_ sender: UIButton) {
-        
+        let pwd = UserDefaults.standard.string(forKey: "pwd")
+        if txtPassword.text != txtPasswordCheck.text || pwd != txtPassword.text {
+            messageAlert(controllerTitle: "경고", controllerMessage: "비밀번호가 일치하지 않습니다.", actionTitle: "확인")
+        } else {
+            
+            // 데이터베이스 데이터 삭제
+            let user = Auth.auth().currentUser
+            self.ref = Database.database().reference()
+            
+//            self.ref.child("users").child(user!.uid)
+            self.ref.child("users").child(user!.uid).removeValue { error, _  in
+                if let _ = error {
+                    self.messageAlert(controllerTitle: "경고", controllerMessage: "유저 데이터베이스 데이터를 삭제하지 못했습니다.", actionTitle: "확인")
+                } else {
+                    user?.delete{ error in
+                        if let _ = error {
+                            self.messageAlert(controllerTitle: "경고", controllerMessage: "사용자 탈퇴 실패", actionTitle: "확인")
+                        } else {
+                            // 자동로그인 제거
+                            UserDefaults.standard.removeObject(forKey: "email")
+                            UserDefaults.standard.removeObject(forKey: "pwd")
+                            
+                            self.messageAlert(controllerTitle: "탈퇴", controllerMessage: "탈퇴 완료", actionTitle: "확인")
+                        }
+                    }
+                }
+            }
+        }
     }
     
     
@@ -79,10 +122,10 @@ class UserDeleteViewController: UIViewController, UITextFieldDelegate {
     ///   - controllerMessage: Alert Message
     ///   - actionTitle: action(button content)
     func messageAlert(controllerTitle:String, controllerMessage:String, actionTitle:String) {
-        if controllerTitle == "정보 수정 완료" {
+        if controllerTitle == "탈퇴" {
             let alertCon = UIAlertController(title: controllerTitle, message: controllerMessage, preferredStyle: UIAlertController.Style.alert)
             let alertAct = UIAlertAction(title: actionTitle, style: UIAlertAction.Style.default, handler:  { (action) in
-                self.changeView(viewName: "mainBoard") })
+                self.changeView(viewName: "login") })
             alertCon.addAction(alertAct)
             present(alertCon, animated: true, completion: nil)
         } else {
@@ -112,6 +155,12 @@ class UserDeleteViewController: UIViewController, UITextFieldDelegate {
             self.present(vcName, animated: true, completion: nil)
         } else if viewName == "passwordCheck" {
             guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "passwordCheckBoard")as? PasswordCheckViewController else {return}
+            
+            vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
+            vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
+            self.present(vcName, animated: true, completion: nil)
+        } else if viewName == "login" {
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "loginBoard")as? LoginViewController else {return}
             
             vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정

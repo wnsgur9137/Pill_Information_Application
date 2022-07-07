@@ -139,12 +139,10 @@ class JoinController: UIViewController, UITextFieldDelegate {
         } else {
             if txtPassword.text != txtPasswordCheck.text {
                 lblPasswordCheck.text = "비밀번호가 일치하지 않습니다."
+            } else if !isValid(str: txtPasswordCheck.text ?? "", textField: txtPasswordCheck) {
+                lblPasswordCheck.text = "소문자, 대문자, 숫자를 조합하여 8자 이상"
             } else {
                 lblPasswordCheck.text = ""
-                passCheck = isValid(str: txtPasswordCheck.text ?? "", textField: txtPasswordCheck)
-                if passCheck == false {
-                    lblPasswordCheck.text = "소문자, 대문자, 숫자를 조합하여 8자 이상"
-                }
             }
         }
         

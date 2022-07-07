@@ -14,10 +14,8 @@ import FirebaseDatabase
 class PasswordResetViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var txtPassword: UITextField!
-    @IBOutlet weak var txtNewPassword: UITextField!
-    @IBOutlet weak var txtNewPasswordCheck: UITextField!
+    @IBOutlet weak var txtPasswordCheck: UITextField!
     @IBOutlet weak var btnChangePassword: UIButton!
-    @IBOutlet weak var lblPasswordWarning: UILabel!
     
     var boolPasswordCheck = false
     var valid = false
@@ -35,14 +33,12 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         textFieldSetting()
-        lblPasswordWarning.text = ""
     }
     
     
     func textFieldSetting() {
         txtPassword.delegate = self
-        txtNewPassword.delegate = self
-        txtNewPasswordCheck.delegate = self
+        txtPasswordCheck.delegate = self
     }
     
     
@@ -53,8 +49,7 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
     ///   - event: 외부
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.txtPassword.resignFirstResponder()
-        self.txtNewPassword.resignFirstResponder()
-        self.txtNewPasswordCheck.resignFirstResponder()
+        self.txtPasswordCheck.resignFirstResponder()
     }
     
     /// 키보드에서 Return(Enter)를 입력할 경우
@@ -62,40 +57,12 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
     /// - Returns: 리턴 값(true)
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == txtPassword {
-            txtNewPassword.becomeFirstResponder()
-        } else if textField == txtNewPassword {
-            txtNewPasswordCheck.becomeFirstResponder()
-        } else if textField == txtNewPasswordCheck {
-            txtNewPasswordCheck.resignFirstResponder()
+            txtPasswordCheck.becomeFirstResponder()
+        } else if textField == txtPasswordCheck {
+            txtPasswordCheck.resignFirstResponder()
             self.changePassword(btnChangePassword)
         }
         return true
-    }
-    
-    /// 텍스트필드 형식 검사 함수
-    /// - Parameters:
-    ///   - str: 검사할 문자열
-    ///   - textField: 검사할 문자열이 담긴 텍스트 필드(이에 따라 검사 방법이 달라짐)
-    /// - Returns: 형식이 알맞은지 true, false로 반환함.
-    func isValid(str: String) -> Bool {
-        // 비밀번호 형식 (숫자, 문자 포함 8자 이상)
-        let passwordRegEx = "^[a-zA-Z0-9]{8,}$"
-        let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
-        return passwordTest.evaluate(with: str)
-    }
-    
-    
-    /// 모든 텍스트필드의 공백을 검사, 이메일 형식, 비밀번호 형식 검사
-    /// - Parameter textField: 입력하고 있는 TextField
-    func textFieldDidChangeSelection(_ textField: UITextField) {
-        if txtNewPassword.text != txtNewPasswordCheck.text {
-            lblPasswordWarning.text = "비밀번호가 일치하지 않습니다."
-        } else if !isValid(str: txtNewPasswordCheck.text ?? "") {
-            lblPasswordWarning.text = "소문자, 대문자, 숫자를 조합하여 8자 이상"
-        } else {
-            lblPasswordWarning.text = ""
-        }
-        
     }
     
     
@@ -107,14 +74,12 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
     @IBAction func changePassword(_ sender: UIButton) {
         let pwd = UserDefaults.standard.string(forKey: "pwd")
         
-        if txtPassword.text == "" || txtNewPassword.text == "" || txtNewPasswordCheck.text == "" {
+        if txtPassword.text == "" || txtPasswordCheck.text == "" {
             messageAlert(controllerTitle: "경고", controllerMessage: "공백이 존재합니다.", actionTitle: "확인")
         } else if pwd != txtPassword.text {
-            messageAlert(controllerTitle: "경고", controllerMessage: "기존 비밀번호가 일치하지 않습니다.", actionTitle: "확인")
-        } else if txtNewPassword.text != txtNewPasswordCheck.text {
-            messageAlert(controllerTitle: "경고", controllerMessage: "신규 비밀번호가 일치하지 않습니다.", actionTitle: "확인")
-        }else if !isValid(str: txtNewPasswordCheck.text ?? "") {
-            messageAlert(controllerTitle: "경고", controllerMessage: "소문자, 대문자, 숫자를 조합하여 8자 이상으로 비밀번호를 설정하십시오.", actionTitle: "확인")
+            messageAlert(controllerTitle: "경고", controllerMessage: "비밀번호가 일치하지 않습니다.", actionTitle: "확인")
+        } else if txtPassword.text != txtPasswordCheck.text {
+            messageAlert(controllerTitle: "경고", controllerMessage: "비밀번호가 일치하지 않습니다.", actionTitle: "확인")
         } else {
             let userEmail = UserDefaults.standard.string(forKey: "email")
             
@@ -125,6 +90,26 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
                     self.messageAlert(controllerTitle: "성공", controllerMessage: "비밀번호 변경을 위한 이메일을 전송하였습니다.", actionTitle: "확인")
                 }
             }
+        }
+    }
+    
+    
+    func logOut() {
+        let firebaseAuth = Auth.auth()
+
+        do {
+          // 로그아웃 시도하기
+            
+            // 자동로그인 제거
+            UserDefaults.standard.removeObject(forKey: "email")
+            UserDefaults.standard.removeObject(forKey: "pwd")
+            
+            
+            try firebaseAuth.signOut()
+            changeView(viewName: "login")
+            
+        } catch let signOutError as NSError {
+            print("ERROR: signout \(signOutError.localizedDescription)")
         }
     }
     
@@ -158,6 +143,12 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
             vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
             self.present(vcName, animated: true, completion: nil)
+        } else if viewName == "login" {
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "loginViewBoard")as? LoginViewController else {return}
+            
+            vcName.modalPresentationStyle = .fullScreen
+            vcName.modalTransitionStyle = .crossDissolve
+            self.present(vcName, animated: true, completion: nil)
         }
     }
     
@@ -172,7 +163,7 @@ class PasswordResetViewController: UIViewController, UITextFieldDelegate {
         if controllerTitle == "성공" {
             let alertCon = UIAlertController(title: controllerTitle, message: controllerMessage, preferredStyle: UIAlertController.Style.alert)
             let alertAct = UIAlertAction(title: actionTitle, style: UIAlertAction.Style.default, handler:  { (action) in
-                self.changeView(viewName: "profileUpdate") })
+                self.logOut() })
             alertCon.addAction(alertAct)
             present(alertCon, animated: true, completion: nil)
         } else if controllerTitle == "실패" {

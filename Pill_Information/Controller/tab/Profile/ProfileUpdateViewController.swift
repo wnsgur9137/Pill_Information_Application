@@ -24,6 +24,10 @@ class ProfileUpdateViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtAddress1: UITextField!
     @IBOutlet weak var txtAddress2: UITextField!
     @IBOutlet weak var btnUpdate: UIButton!
+    @IBOutlet weak var lblWarning: UILabel!
+    @IBOutlet weak var btnEmailChange: UIButton!
+    @IBOutlet weak var btnPasswordReset: UIButton!
+    @IBOutlet weak var btnUserDelete: UIButton!
     
     private let datePicker = UIDatePicker()
     private var diaryDate: Date?
@@ -44,6 +48,9 @@ class ProfileUpdateViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         txtSetting()
+//        lblWarning.lineBreakMode = .byWordWrapping
+//        lblWarning.numberOfLines = 0
+        btnEmailChange.isEnabled = false
     }
     
     
