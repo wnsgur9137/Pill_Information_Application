@@ -10,13 +10,16 @@ import Firebase
 import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
+import AVFoundation
 
 class MyProfileViewController: UIViewController {
     
     var ref: DatabaseReference!
 
-    @IBOutlet weak var imgProfile: UIImageView!
+    @IBOutlet weak var imgProfileImage: UIImageView!
     @IBOutlet weak var lblName: UILabel!
+    
+    let imgPickerController = UIImagePickerController()
     
     
     override func viewDidLoad() {

@@ -13,6 +13,47 @@ import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+    
+//    struct hospitalData: Decodable{
+//        let currentCount: Int
+//        let data: [Data]
+//    }
+//
+//    struct Data: Decodable{
+//        var pageNo: String
+//        var numOfRows: String
+//        var entpName: String // 업체명
+//        var itemName: String //제품명
+//        var itemSeq: String //품목기준코드
+//        var efcyQesitm: String // 효능
+//        var useMethodQesitm:String // 사용법
+//        var atpnWarnQesitm: String // 주의사항, 경고
+//        var atpnQesitm: String // 주의사항
+//        var intrcQesitm: String // 상호작용
+//        var seQesitm: String // 부작용
+//        var depositMethodQesitm: String // 보관법
+//        var openDe: String // 공개일자
+//        var updateDe: String // 수정일자
+//        var itemImage: String // 낱알 이미지
+//    }
+//    
+//    func getDrbEasyDrugList() {
+//        if let url = URL(string:"http://apis.data.go.kr/1471000/DrbEasyDrugInfoService/getDrbEasyDrugList?serviceKey=서비스키(URLEncode)&trustEntpName=한미약품(주)&pageNo=1&startPage=1&numOfRows=3") {
+//            let request = URLRequest.init(url: url)
+//
+//            URLSession.shared.dataTask(with: request) {
+//                (data, response, error) in guard let data = data else {return}
+//                let decoder = JSONDecoder()
+//                print(response as Any)
+//                do{ let json = try decoder.decode(hospitalData.self , from: data)
+//                     print(json)
+//                }
+//                catch{
+//                    print(error)
+//                }
+//            }.resume()
+//        }
+//    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -20,6 +61,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Google 로그인 Delgate 초기화
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+        
+        
+//        getDrbEasyDrugList()
         return true
     }
     
