@@ -23,6 +23,7 @@
 		66B10D6328654EE800CEE1FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66B10D6228654EE800CEE1FA /* GoogleService-Info.plist */; };
 		66C0C06728694806007967A0 /* profileInitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C0C06628694806007967A0 /* profileInitController.swift */; };
 		66CFB5942876A68A00451855 /* SearchPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CFB5932876A68A00451855 /* SearchPasswordViewController.swift */; };
+		66E01A04287D3AB700E2A86F /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 66E01A03287D3AB700E2A86F /* FSCalendar */; };
 		66EF363E287517860013F196 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EF363D287517860013F196 /* PasswordResetViewController.swift */; };
 		66EF364028752E5B0013F196 /* EmailChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EF363F28752E5B0013F196 /* EmailChangeViewController.swift */; };
 		66EF364228752E840013F196 /* UserDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EF364128752E840013F196 /* UserDeleteViewController.swift */; };
@@ -63,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2FA4D15348F68B63DC64C33 /* Pods_Pill_Information.framework in Frameworks */,
+				66E01A04287D3AB700E2A86F /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +193,9 @@
 			dependencies = (
 			);
 			name = Pill_Information;
+			packageProductDependencies = (
+				66E01A03287D3AB700E2A86F /* FSCalendar */,
+			);
 			productName = Pill_Information;
 			productReference = 66B10D47286547CE00CEE1FA /* Pill_Information.app */;
 			productType = "com.apple.product-type.application";
@@ -219,6 +224,9 @@
 				Base,
 			);
 			mainGroup = 66B10D3E286547CE00CEE1FA;
+			packageReferences = (
+				66E01A02287D3AB600E2A86F /* XCRemoteSwiftPackageReference "FSCalendar" */,
+			);
 			productRefGroup = 66B10D48286547CE00CEE1FA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -542,6 +550,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		66E01A02287D3AB600E2A86F /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		66E01A03287D3AB700E2A86F /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 66E01A02287D3AB600E2A86F /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 66B10D3F286547CE00CEE1FA /* Project object */;
 }

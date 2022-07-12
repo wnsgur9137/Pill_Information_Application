@@ -126,18 +126,65 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LRh-to-7vY">
                                 <rect key="frame" x="16" y="44" width="358" height="717"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfE-Xr-Mkz">
-                                        <rect key="frame" x="0.0" y="0.0" width="358" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7An-dW-Cz5">
-                                        <rect key="frame" x="0.0" y="20.333333333333314" width="358" height="696.66666666666674"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="yxT-Kq-mFu"/>
+                                        </constraints>
                                         <items>
                                             <navigationItem title="알약 정보" id="kjr-pS-Y9Y"/>
                                         </items>
                                     </navigationBar>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SNe-8E-Gy3">
+                                        <rect key="frame" x="0.0" y="50" width="358" height="358"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufT-U1-iNB">
+                                                <rect key="frame" x="0.0" y="0.0" width="358" height="179"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qJ-vR-beb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="179" height="179"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="179" id="NKO-CV-MpM"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="사진으로 알약 검색"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9U-h4-CQP">
+                                                        <rect key="frame" x="179" y="0.0" width="179" height="179"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="179" id="eQn-fl-nf3"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="입력으로 알약 검색"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x5A-x5-d5i">
+                                                <rect key="frame" x="0.0" y="179" width="358" height="179"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WeG-WO-Pgw">
+                                                        <rect key="frame" x="0.0" y="0.0" width="179" height="179"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="179" id="g8I-Fd-LNT"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="섭취 타이머"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zki-aS-NjL">
+                                                        <rect key="frame" x="179" y="0.0" width="179" height="179"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="179" id="caO-WJ-C6f"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="주기 섭취 알람"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HZQ-Zm-upg">
+                                        <rect key="frame" x="0.0" y="408" width="358" height="309"/>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -152,9 +199,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" id="IoD-cV-0fi"/>
                     <navigationItem key="navigationItem" id="yHK-5i-h1j"/>
-                    <connections>
-                        <outlet property="testLabel" destination="lfE-Xr-Mkz" id="0uz-ET-7Eb"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJt-bn-Jtp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -291,6 +335,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DAL-TZ-aDd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3234" y="1399"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rRJ-91-gny">
+            <objects>
+                <viewController id="vRB-0d-H2T" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dr0-6Z-XDs">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qmC-wn-44M">
+                                <rect key="frame" x="16" y="44" width="358" height="766"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kV3-U9-Vz5">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="50"/>
+                                        <subviews>
+                                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eSM-0R-VLQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="358" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="ONJ-S9-JQQ"/>
+                                                </constraints>
+                                                <items>
+                                                    <navigationItem title="추가" id="sNk-3T-yeN">
+                                                        <barButtonItem key="leftBarButtonItem" title="Item" image="lessthan" catalog="system" id="k1O-Ng-M5t"/>
+                                                    </navigationItem>
+                                                </items>
+                                            </navigationBar>
+                                        </subviews>
+                                    </stackView>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="abM-9Z-mRf">
+                                        <rect key="frame" x="0.0" y="50" width="358" height="716"/>
+                                    </datePicker>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="E9e-Nm-0CE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qmC-wn-44M" firstAttribute="top" secondItem="E9e-Nm-0CE" secondAttribute="top" id="9tR-X4-5Lc"/>
+                            <constraint firstItem="qmC-wn-44M" firstAttribute="leading" secondItem="E9e-Nm-0CE" secondAttribute="leading" constant="16" id="EXe-TQ-M7t"/>
+                            <constraint firstItem="E9e-Nm-0CE" firstAttribute="bottom" secondItem="qmC-wn-44M" secondAttribute="bottom" id="OdA-8G-LWx"/>
+                            <constraint firstItem="E9e-Nm-0CE" firstAttribute="trailing" secondItem="qmC-wn-44M" secondAttribute="trailing" constant="16" id="jUC-Ld-zsI"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DJy-X7-SSC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1760" y="2064"/>
         </scene>
         <!--정보 변경-->
         <scene sceneID="3I2-lN-B4x">
@@ -856,12 +947,26 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Rbh-Eo-hBa">
                                 <rect key="frame" x="16" y="44" width="358" height="717"/>
                                 <subviews>
-                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dz7-x5-60T">
-                                        <rect key="frame" x="0.0" y="0.0" width="358" height="717"/>
-                                        <items>
-                                            <navigationItem title="캘린더" id="6R8-B3-gf7"/>
-                                        </items>
-                                    </navigationBar>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bZ2-Jw-zWE">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="50"/>
+                                        <subviews>
+                                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dz7-x5-60T">
+                                                <rect key="frame" x="0.0" y="0.0" width="358" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="txk-i4-RiO"/>
+                                                </constraints>
+                                                <items>
+                                                    <navigationItem title="캘린더" id="6R8-B3-gf7">
+                                                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="IVr-Jt-oIH"/>
+                                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Bfw-QU-kvj"/>
+                                                    </navigationItem>
+                                                </items>
+                                            </navigationBar>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ed6-s7-YtK">
+                                        <rect key="frame" x="0.0" y="50" width="358" height="667"/>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -1322,10 +1427,10 @@
                                         <rect key="frame" x="16" y="240" width="326" height="526"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="M9H-dn-YWO">
-                                                <rect key="frame" x="8" y="120" width="310" height="351"/>
+                                                <rect key="frame" x="8" y="120" width="310" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 : " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="553-EB-c4c">
-                                                        <rect key="frame" x="0.0" y="0.0" width="110" height="351"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="110" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="110" id="Aut-kb-vW3"/>
                                                         </constraints>
@@ -1334,7 +1439,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ns-t6-mQv">
-                                                        <rect key="frame" x="110" y="0.0" width="200" height="351"/>
+                                                        <rect key="frame" x="110" y="0.0" width="200" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="34" id="DTQ-ct-8gW"/>
                                                             <constraint firstAttribute="width" constant="200" id="R9g-Y8-hn7"/>
@@ -1345,10 +1450,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="경고" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHK-8s-Wy6">
-                                                <rect key="frame" x="20" y="471" width="286" height="13"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="13" id="oKJ-mv-QnV"/>
-                                                </constraints>
+                                                <rect key="frame" x="20" y="154" width="286" height="330"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" systemColor="systemRedColor"/>
                                                 <nil key="highlightedColor"/>
