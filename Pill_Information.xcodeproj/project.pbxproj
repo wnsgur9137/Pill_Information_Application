@@ -24,6 +24,10 @@
 		66C0C06728694806007967A0 /* profileInitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C0C06628694806007967A0 /* profileInitController.swift */; };
 		66CFB5942876A68A00451855 /* SearchPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CFB5932876A68A00451855 /* SearchPasswordViewController.swift */; };
 		66E01A04287D3AB700E2A86F /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 66E01A03287D3AB700E2A86F /* FSCalendar */; };
+		66E01A07287D6C8600E2A86F /* AlramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E01A06287D6C8600E2A86F /* AlramViewController.swift */; };
+		66E01A09287D6CCC00E2A86F /* AddAlramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E01A08287D6CCC00E2A86F /* AddAlramViewController.swift */; };
+		66E01A0B287D718300E2A86F /* SearchEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E01A0A287D718300E2A86F /* SearchEmailViewController.swift */; };
+		66E01A0D287D734E00E2A86F /* SearchEmailResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E01A0C287D734E00E2A86F /* SearchEmailResultViewController.swift */; };
 		66EF363E287517860013F196 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EF363D287517860013F196 /* PasswordResetViewController.swift */; };
 		66EF364028752E5B0013F196 /* EmailChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EF363F28752E5B0013F196 /* EmailChangeViewController.swift */; };
 		66EF364228752E840013F196 /* UserDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EF364128752E840013F196 /* UserDeleteViewController.swift */; };
@@ -51,6 +55,10 @@
 		66B10D6228654EE800CEE1FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		66C0C06628694806007967A0 /* profileInitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileInitController.swift; sourceTree = "<group>"; };
 		66CFB5932876A68A00451855 /* SearchPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPasswordViewController.swift; sourceTree = "<group>"; };
+		66E01A06287D6C8600E2A86F /* AlramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlramViewController.swift; sourceTree = "<group>"; };
+		66E01A08287D6CCC00E2A86F /* AddAlramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlramViewController.swift; sourceTree = "<group>"; };
+		66E01A0A287D718300E2A86F /* SearchEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEmailViewController.swift; sourceTree = "<group>"; };
+		66E01A0C287D734E00E2A86F /* SearchEmailResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEmailResultViewController.swift; sourceTree = "<group>"; };
 		66EF363D287517860013F196 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
 		66EF363F28752E5B0013F196 /* EmailChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailChangeViewController.swift; sourceTree = "<group>"; };
 		66EF364128752E840013F196 /* UserDeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDeleteViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +120,7 @@
 		665FAE2C286C1C9F00B85A32 /* tab */ = {
 			isa = PBXGroup;
 			children = (
+				66E01A05287D6C3600E2A86F /* Alram */,
 				661913292872B72F004185AA /* Profile */,
 				66AD6E5A286EAEB600D24FC6 /* MainViewController.swift */,
 				6619132C2873FCDD004185AA /* PasswordCheckViewController.swift */,
@@ -170,8 +179,19 @@
 				6695431A28658BC400584636 /* JoinController.swift */,
 				66C0C06628694806007967A0 /* profileInitController.swift */,
 				66CFB5932876A68A00451855 /* SearchPasswordViewController.swift */,
+				66E01A0A287D718300E2A86F /* SearchEmailViewController.swift */,
+				66E01A0C287D734E00E2A86F /* SearchEmailResultViewController.swift */,
 			);
 			path = EmailLogin;
+			sourceTree = "<group>";
+		};
+		66E01A05287D6C3600E2A86F /* Alram */ = {
+			isa = PBXGroup;
+			children = (
+				66E01A06287D6C8600E2A86F /* AlramViewController.swift */,
+				66E01A08287D6CCC00E2A86F /* AddAlramViewController.swift */,
+			);
+			path = Alram;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,9 +334,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66E01A07287D6C8600E2A86F /* AlramViewController.swift in Sources */,
 				66B10D4F286547CE00CEE1FA /* LoginViewController.swift in Sources */,
 				669543192865859C00584636 /* EmailLoginController.swift in Sources */,
+				66E01A0B287D718300E2A86F /* SearchEmailViewController.swift in Sources */,
 				6619132D2873FCDD004185AA /* PasswordCheckViewController.swift in Sources */,
+				66E01A09287D6CCC00E2A86F /* AddAlramViewController.swift in Sources */,
 				66B10D4B286547CE00CEE1FA /* AppDelegate.swift in Sources */,
 				66A59E982877F0BB00B8EDD5 /* ApiKeys.swift in Sources */,
 				6619132B2872B74B004185AA /* ProfileUpdateViewController.swift in Sources */,
@@ -329,6 +352,7 @@
 				66AD6E5B286EAEB600D24FC6 /* MainViewController.swift in Sources */,
 				66EF364028752E5B0013F196 /* EmailChangeViewController.swift in Sources */,
 				66EF364228752E840013F196 /* UserDeleteViewController.swift in Sources */,
+				66E01A0D287D734E00E2A86F /* SearchEmailResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

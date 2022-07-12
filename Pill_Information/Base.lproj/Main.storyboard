@@ -12,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="loginBoard" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginBoard" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,7 +79,7 @@
         <!--Search-->
         <scene sceneID="oVc-d4-RmU">
             <objects>
-                <viewController id="BX5-25-BfR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchPillBoard" id="BX5-25-BfR" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KAr-Oj-Qep" customClass="MainTabView" customModule="Pill_Information" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,7 +118,7 @@
         <!--Main-->
         <scene sceneID="lTO-dP-UPW">
             <objects>
-                <viewController id="55e-78-9L9" customClass="MainViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainTabBoard" id="55e-78-9L9" customClass="MainViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2eu-u1-PEv" customClass="MainView">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,7 +207,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="58I-DO-7Jt">
             <objects>
-                <tabBarController storyboardIdentifier="mainBoard" id="W2G-Tm-qYW" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainBoard" id="W2G-Tm-qYW" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Sq1-aZ-76U">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -227,7 +227,7 @@
         <!--내 정보-->
         <scene sceneID="D9O-Uy-07J">
             <objects>
-                <viewController storyboardIdentifier="myProfileBoard" id="b1z-RH-Yhj" customClass="MyProfileViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyProfileBoard" id="b1z-RH-Yhj" customClass="MyProfileViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="daY-QW-Yfk" customClass="MyProFileController">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,10 +336,10 @@
             </objects>
             <point key="canvasLocation" x="3234" y="1399"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Alram View Controller-->
         <scene sceneID="rRJ-91-gny">
             <objects>
-                <viewController id="vRB-0d-H2T" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddAlramBoard" id="vRB-0d-H2T" customClass="AddAlramViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dr0-6Z-XDs">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -386,7 +386,7 @@
         <!--정보 변경-->
         <scene sceneID="3I2-lN-B4x">
             <objects>
-                <viewController storyboardIdentifier="profileUpdateBoard" id="5zT-TK-nC4" customClass="ProfileUpdateViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileUpdateBoard" id="5zT-TK-nC4" customClass="ProfileUpdateViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Pf-DD-niT">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -693,7 +693,7 @@
         <!--User Delete View Controller-->
         <scene sceneID="The-Us-jgF">
             <objects>
-                <viewController storyboardIdentifier="userDeleteBoard" id="zCF-Xa-shP" customClass="UserDeleteViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserDeleteBoard" id="zCF-Xa-shP" customClass="UserDeleteViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="19l-DS-FsT">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -848,7 +848,7 @@
         <!--Password Check View Controller-->
         <scene sceneID="aZG-UZ-0KB">
             <objects>
-                <viewController storyboardIdentifier="passwordCheckBoard" id="N8j-c9-lxm" customClass="PasswordCheckViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PasswordCheckBoard" id="N8j-c9-lxm" customClass="PasswordCheckViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7MM-4M-KDV">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -936,10 +936,10 @@
             </objects>
             <point key="canvasLocation" x="1760" y="663"/>
         </scene>
-        <!--calendar-->
+        <!--Alram-->
         <scene sceneID="WV8-0t-YQR">
             <objects>
-                <viewController id="HT0-vz-Bht" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlramBoard" id="HT0-vz-Bht" customClass="AlramViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cvz-nc-vvN">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -956,9 +956,17 @@
                                                     <constraint firstAttribute="height" constant="50" id="txk-i4-RiO"/>
                                                 </constraints>
                                                 <items>
-                                                    <navigationItem title="캘린더" id="6R8-B3-gf7">
-                                                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="IVr-Jt-oIH"/>
-                                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Bfw-QU-kvj"/>
+                                                    <navigationItem title="알람" id="6R8-B3-gf7">
+                                                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="IVr-Jt-oIH">
+                                                            <connections>
+                                                                <action selector="btnEdit:" destination="HT0-vz-Bht" id="KzU-E6-Nzt"/>
+                                                            </connections>
+                                                        </barButtonItem>
+                                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Bfw-QU-kvj">
+                                                            <connections>
+                                                                <action selector="btnAdd:" destination="HT0-vz-Bht" id="wbm-iw-HEL"/>
+                                                            </connections>
+                                                        </barButtonItem>
                                                     </navigationItem>
                                                 </items>
                                             </navigationBar>
@@ -979,7 +987,7 @@
                             <constraint firstItem="Rbh-Eo-hBa" firstAttribute="leading" secondItem="Ch8-Lb-uqv" secondAttribute="leading" constant="16" id="VJb-hh-dqs"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="calendar" image="calendar" catalog="system" id="mUp-sL-6LK"/>
+                    <tabBarItem key="tabBarItem" title="Alram" image="stopwatch" catalog="system" id="mUp-sL-6LK"/>
                     <navigationItem key="navigationItem" id="Ou0-Yf-wpJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZk-am-KAI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1099,13 +1107,32 @@
                                         <rect key="frame" x="0.0" y="526" width="358" height="244"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ofz-OY-Zi1">
-                                                <rect key="frame" x="8" y="50" width="342" height="0.0"/>
+                                                <rect key="frame" x="8" y="50" width="342" height="60.666666666666657"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 찾기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWW-qt-mZJ">
+                                                        <rect key="frame" x="0.0" y="20.333333333333371" width="200" height="20.333333333333329"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="200" id="NIS-Hu-EfR"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIZ-jP-Rqw">
+                                                        <rect key="frame" x="200" y="15" width="142" height="31"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="이메일 찾기"/>
+                                                        <connections>
+                                                            <action selector="searchEmail:" destination="ko0-Jg-v6p" eventType="touchUpInside" id="E59-Ag-85R"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pRF-wx-c0d">
-                                                <rect key="frame" x="8" y="50" width="342" height="91"/>
+                                                <rect key="frame" x="8" y="110.66666666666664" width="342" height="60.666666666666671"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 찾기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTS-bc-2BW">
-                                                        <rect key="frame" x="0.0" y="35.333333333333371" width="200" height="20.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="20.333333333333371" width="200" height="20.333333333333329"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="200" id="Ejx-2T-lNV"/>
                                                         </constraints>
@@ -1114,7 +1141,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Gs-6V-tvC">
-                                                        <rect key="frame" x="200" y="30" width="142" height="31"/>
+                                                        <rect key="frame" x="200" y="15" width="142" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="비밀번호 찾기"/>
                                                         <connections>
@@ -1124,10 +1151,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3MR-dT-mPZ">
-                                                <rect key="frame" x="8" y="141" width="342" height="91"/>
+                                                <rect key="frame" x="8" y="171.33333333333337" width="342" height="60.666666666666657"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입하고 시작하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icD-Jk-Br5">
-                                                        <rect key="frame" x="0.0" y="36.666666666666629" width="200" height="18"/>
+                                                        <rect key="frame" x="0.0" y="21.333333333333258" width="200" height="18"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="200" id="nh7-rI-U8t"/>
                                                         </constraints>
@@ -1136,7 +1163,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wy9-ik-wDh">
-                                                        <rect key="frame" x="200" y="30" width="142" height="31"/>
+                                                        <rect key="frame" x="200" y="15" width="142" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="회원가입"/>
                                                         <connections>
@@ -1174,7 +1201,7 @@
         <!--Join Controller-->
         <scene sceneID="NFC-0q-nki">
             <objects>
-                <viewController storyboardIdentifier="joinBoard" id="36H-ih-NOz" customClass="JoinController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JoinBoard" id="36H-ih-NOz" customClass="JoinController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EpL-3I-L4x">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1382,10 +1409,159 @@
             </objects>
             <point key="canvasLocation" x="1760" y="-193"/>
         </scene>
+        <!--Search Email View Controller-->
+        <scene sceneID="OJU-sT-74h">
+            <objects>
+                <viewController storyboardIdentifier="SearchEmail" id="g9W-mp-cTD" customClass="SearchEmailViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kEx-MA-nPM">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TZD-Pd-bTN">
+                                <rect key="frame" x="16" y="44" width="358" height="766"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JmM-oa-0Sx">
+                                        <rect key="frame" x="129" y="0.0" width="100" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHL-EZ-MXF">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="6eN-bi-gJr"/>
+                                                    <constraint firstAttribute="width" constant="100" id="tDa-ok-lgr"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="&lt; 뒤로가기"/>
+                                                <connections>
+                                                    <action selector="goBack:" destination="Xar-BB-fIC" eventType="touchUpInside" id="YDn-mk-FYk"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="iHL-EZ-MXF" firstAttribute="leading" secondItem="JmM-oa-0Sx" secondAttribute="leading" id="FEU-Ea-wYK"/>
+                                            <constraint firstAttribute="height" constant="40" id="YKP-Ow-233"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 찾기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4a-iM-12P">
+                                        <rect key="frame" x="140" y="40" width="78" height="203"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wUH-rb-OI9">
+                                        <rect key="frame" x="16" y="243" width="326" height="523"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="fcq-h5-0Fu">
+                                                <rect key="frame" x="8" y="120" width="310" height="34"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름 :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggh-0r-xfy">
+                                                        <rect key="frame" x="0.0" y="0.0" width="110" height="34"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="110" id="QJi-LV-9BU"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VAt-pf-pgN">
+                                                        <rect key="frame" x="110" y="0.0" width="200" height="34"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="1ys-vt-6ao"/>
+                                                            <constraint firstAttribute="width" constant="200" id="VP5-2C-VSl"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="pBS-3K-F1I">
+                                                <rect key="frame" x="8" y="154" width="310" height="34"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴대번호" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afw-hi-5US">
+                                                        <rect key="frame" x="0.0" y="0.0" width="110" height="34"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="110" id="oEC-8D-oHb"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D52-JO-f1c">
+                                                        <rect key="frame" x="110" y="0.0" width="200" height="34"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="200" id="Z7g-Kv-8us"/>
+                                                            <constraint firstAttribute="height" constant="34" id="oWt-e1-kBO"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmj-Rm-xu9">
+                                                <rect key="frame" x="20" y="188" width="286" height="293"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7X8-ie-26A">
+                                                <rect key="frame" x="103" y="481" width="120" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="2wt-ru-lOs"/>
+                                                    <constraint firstAttribute="height" constant="34" id="Lri-4J-ip7"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="이메일 찾기"/>
+                                                <connections>
+                                                    <action selector="resetPassword:" destination="Xar-BB-fIC" eventType="touchUpInside" id="4CU-YR-NNi"/>
+                                                    <action selector="searchEmail:" destination="g9W-mp-cTD" eventType="touchUpInside" id="emI-Rj-gCp"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="xmj-Rm-xu9" secondAttribute="trailing" constant="20" symbolic="YES" id="F1d-FD-ebh"/>
+                                            <constraint firstItem="xmj-Rm-xu9" firstAttribute="leading" secondItem="wUH-rb-OI9" secondAttribute="leading" constant="20" symbolic="YES" id="lbW-Iw-tv9"/>
+                                        </constraints>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="120" leading="8" bottom="8" trailing="8"/>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jo6-Sc-bp9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TZD-Pd-bTN" firstAttribute="leading" secondItem="jo6-Sc-bp9" secondAttribute="leading" constant="16" id="635-J9-wwP"/>
+                            <constraint firstItem="jo6-Sc-bp9" firstAttribute="bottom" secondItem="TZD-Pd-bTN" secondAttribute="bottom" id="YSO-o4-snC"/>
+                            <constraint firstItem="jo6-Sc-bp9" firstAttribute="trailing" secondItem="TZD-Pd-bTN" secondAttribute="trailing" constant="16" id="lQL-ua-Nky"/>
+                            <constraint firstItem="TZD-Pd-bTN" firstAttribute="top" secondItem="kEx-MA-nPM" secondAttribute="topMargin" id="sFz-Mb-GFG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="txtName" destination="VAt-pf-pgN" id="XRB-TS-284"/>
+                        <outlet property="txtPhone" destination="D52-JO-f1c" id="yA8-OJ-sWg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wht-PB-pad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2412" y="-193"/>
+        </scene>
+        <!--Search Email Result View Controller-->
+        <scene sceneID="KTH-wO-gYP">
+            <objects>
+                <viewController storyboardIdentifier="SearchEmailResulBoard" id="r0T-Ty-0XE" customClass="SearchEmailResultViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wwy-bY-hBQ">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="cuT-mF-6sw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Vn-6W-EGT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2726" y="454"/>
+        </scene>
         <!--Search Password View Controller-->
         <scene sceneID="tz4-N5-UMC">
             <objects>
-                <viewController storyboardIdentifier="searchPasswordBoard" id="Xar-BB-fIC" customClass="SearchPasswordViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchPasswordBoard" id="Xar-BB-fIC" customClass="SearchPasswordViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GRR-vb-MtQ">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1495,12 +1671,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9sw-09-Lxr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2463" y="-193"/>
+            <point key="canvasLocation" x="3058" y="-193"/>
         </scene>
         <!--Profile Init Controller-->
         <scene sceneID="JxF-KG-lzG">
             <objects>
-                <viewController storyboardIdentifier="profileInitBoard" id="4fr-xN-Evs" customClass="profileInitController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileInitBoard" id="4fr-xN-Evs" customClass="profileInitController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r1T-Dy-57s">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1742,7 +1918,7 @@
         <!--Password Reset View Controller-->
         <scene sceneID="IPg-mG-wkp">
             <objects>
-                <viewController storyboardIdentifier="passwordResetBoard" id="TTb-OU-sFz" customClass="PasswordResetViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PasswordResetBoard" id="TTb-OU-sFz" customClass="PasswordResetViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xAX-KA-ZS4">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1859,7 +2035,7 @@
         <!--Email Change View Controller-->
         <scene sceneID="EVr-TR-SZ6">
             <objects>
-                <viewController storyboardIdentifier="emailChangeBoard" id="tIy-sk-E3h" customClass="EmailChangeViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmailChangeBoard" id="tIy-sk-E3h" customClass="EmailChangeViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hyu-Mb-8Gs">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2020,10 +2196,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="lessthan" catalog="system" width="128" height="111"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="pills" catalog="system" width="128" height="106"/>
+        <image name="stopwatch" catalog="system" width="121" height="128"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

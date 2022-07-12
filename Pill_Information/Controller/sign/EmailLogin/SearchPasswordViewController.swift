@@ -103,7 +103,7 @@ class SearchPasswordViewController: UIViewController, UITextFieldDelegate {
     /// - Parameter viewName: 어떤 화면을 전환할지 정할 문자열
     func changeView(viewName: String) {
         if viewName == "emailLoginView" {
-            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "emailLoginBoard")as? EmailLoginController else {return}
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "EmailLoginBoard")as? EmailLoginController else {return}
             
             vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정

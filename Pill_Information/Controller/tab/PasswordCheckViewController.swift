@@ -56,7 +56,7 @@ class PasswordCheckViewController: UIViewController, UITextFieldDelegate {
     /// - Parameter viewName: 어떤 화면을 전환할지 정할 문자열
     func changeView(viewName: String) {
         if viewName == "profileUpdate" {
-            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "profileUpdateBoard")as? ProfileUpdateViewController else {return}
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "ProfileUpdateBoard")as? ProfileUpdateViewController else {return}
             
             vcName.boolPasswordCheck = true
             
@@ -64,7 +64,7 @@ class PasswordCheckViewController: UIViewController, UITextFieldDelegate {
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
             self.present(vcName, animated: true, completion: nil)
         } else if viewName == "mainBoard" {
-            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "mainBoard")as? UITabBarController else {return}
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "MainBoard")as? UITabBarController else {return}
             
             vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정

@@ -115,25 +115,31 @@ class EmailLoginController: UIViewController, UITextFieldDelegate {
     /// - Parameter viewName: 어떤 화면을 전환할지 정할 문자열
     func changeView(viewName: String) {
         if viewName == "main" {
-            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "mainBoard")as? UITabBarController else {return}
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "MainBoard")as? UITabBarController else {return}
             
             vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
             self.present(vcName, animated: true, completion: nil)
         } else if viewName == "signUp" {
-            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "joinBoard")as? JoinController else {return}
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "JoinBoard")as? JoinController else {return}
             
             vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
             self.present(vcName, animated: true, completion: nil)
         } else if viewName == "login" {
-            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "loginBoard")as? LoginViewController else {return}
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "LoginBoard")as? LoginViewController else {return}
+            
+            vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
+            vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
+            self.present(vcName, animated: true, completion: nil)
+        } else if viewName == "searchEmail" {
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "SearchEmailBoard")as? SearchPasswordViewController else {return}
             
             vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
             self.present(vcName, animated: true, completion: nil)
         } else if viewName == "resetPassword" {
-            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "searchPasswordBoard")as? SearchPasswordViewController else {return}
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "SearchPasswordBoard")as? SearchPasswordViewController else {return}
             
             vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정

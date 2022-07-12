@@ -113,7 +113,7 @@ class MainViewController: UIViewController {
     func changeView(viewName: String) {
         if viewName == "profileInit" {
            print("\n\ngotoProfileInitCotnroller\n\n")
-           guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "profileInitBoard")as? profileInitController else {return}
+           guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "ProfileInitBoard")as? profileInitController else {return}
            
            vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
            vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정

@@ -239,19 +239,19 @@ class ProfileUpdateViewController: UIViewController, UITextFieldDelegate {
     
     func changeView(viewName: String) {
         if viewName == "mainBoard" {
-            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "mainBoard")as? UITabBarController else {return}
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "MainBoard")as? UITabBarController else {return}
 
             vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
             self.present(vcName, animated: true, completion: nil)
         } else if viewName == "passwordCheck" {
-            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "passwordCheckBoard")as? PasswordCheckViewController else {return}
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "PasswordCheckBoard")as? PasswordCheckViewController else {return}
             
             vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
             self.present(vcName, animated: true, completion: nil)
         } else if viewName == "changeEmail" {
-            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "emailChangeBoard")as? EmailChangeViewController else {return}
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "EmailChangeBoard")as? EmailChangeViewController else {return}
             
             vcName.boolPasswordCheck = true
             
@@ -259,7 +259,7 @@ class ProfileUpdateViewController: UIViewController, UITextFieldDelegate {
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
             self.present(vcName, animated: true, completion: nil)
         } else if viewName == "passwordReset" {
-            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "passwordResetBoard")as? PasswordResetViewController else {return}
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "PasswordResetBoard")as? PasswordResetViewController else {return}
             
             vcName.boolPasswordCheck = true
             
@@ -267,7 +267,7 @@ class ProfileUpdateViewController: UIViewController, UITextFieldDelegate {
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
             self.present(vcName, animated: true, completion: nil)
         } else if viewName == "userDelete" {
-            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "userDeleteBoard")as? UserDeleteViewController else {return}
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "UserDeleteBoard")as? UserDeleteViewController else {return}
             
             vcName.boolPasswordCheck = true
             
