@@ -321,21 +321,6 @@
             </objects>
             <point key="canvasLocation" x="2492" y="1400"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="QvC-SX-Jav">
-            <objects>
-                <viewController id="tp5-NJ-jM7" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Hvo-bS-Q1W">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Gbf-PU-VLA"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DAL-TZ-aDd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3234" y="1399"/>
-        </scene>
         <!--Add Alram View Controller-->
         <scene sceneID="rRJ-91-gny">
             <objects>
@@ -997,7 +982,7 @@
         <!--Email Login Controller-->
         <scene sceneID="d0r-xG-G5z">
             <objects>
-                <viewController storyboardIdentifier="emailLoginBoard" id="ko0-Jg-v6p" customClass="EmailLoginController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmailLoginBoard" id="ko0-Jg-v6p" customClass="EmailLoginController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AZ5-42-Mot">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1442,13 +1427,13 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 찾기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4a-iM-12P">
-                                        <rect key="frame" x="140" y="40" width="78" height="203"/>
+                                        <rect key="frame" x="140" y="40" width="78" height="215"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wUH-rb-OI9">
-                                        <rect key="frame" x="16" y="243" width="326" height="523"/>
+                                        <rect key="frame" x="16" y="255" width="326" height="511"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="fcq-h5-0Fu">
                                                 <rect key="frame" x="8" y="120" width="310" height="34"/>
@@ -1497,13 +1482,13 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmj-Rm-xu9">
-                                                <rect key="frame" x="20" y="188" width="286" height="293"/>
+                                                <rect key="frame" x="20" y="188" width="286" height="281"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" systemColor="systemRedColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7X8-ie-26A">
-                                                <rect key="frame" x="103" y="481" width="120" height="34"/>
+                                                <rect key="frame" x="103" y="469" width="120" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="120" id="2wt-ru-lOs"/>
                                                     <constraint firstAttribute="height" constant="34" id="Lri-4J-ip7"/>
