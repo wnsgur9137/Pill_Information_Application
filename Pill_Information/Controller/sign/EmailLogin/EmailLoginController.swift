@@ -133,7 +133,7 @@ class EmailLoginController: UIViewController, UITextFieldDelegate {
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
             self.present(vcName, animated: true, completion: nil)
         } else if viewName == "searchEmail" {
-            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "SearchEmailBoard")as? SearchPasswordViewController else {return}
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "SearchEmailBoard")as? SearchEmailViewController else {return}
             
             vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
