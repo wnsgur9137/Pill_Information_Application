@@ -108,11 +108,17 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="358" height="333.66666666666669"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="사진으로 검색"/>
+                                                <connections>
+                                                    <action selector="btnPictureSearch:" destination="BX5-25-BfR" eventType="touchUpInside" id="pjT-Cu-prw"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yry-a9-5oM">
                                                 <rect key="frame" x="0.0" y="333.66666666666674" width="358" height="333.33333333333326"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="입력으로 검색"/>
+                                                <connections>
+                                                    <action selector="btnTypingSearch:" destination="BX5-25-BfR" eventType="touchUpInside" id="BWf-fg-6vS"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -130,15 +136,19 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="pills" catalog="system" id="Y4Q-Si-hNI"/>
                     <navigationItem key="navigationItem" id="Bq1-dN-bDf"/>
+                    <connections>
+                        <outlet property="btnPictureSearch" destination="tgv-Ca-2nX" id="LRw-I2-R7d"/>
+                        <outlet property="btnTypingSearch" destination="yry-a9-5oM" id="fsu-Fy-iGd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SPm-PY-bNM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1535" y="1399"/>
         </scene>
-        <!--View Controller-->
+        <!--Picture Search View Controller-->
         <scene sceneID="isV-kc-EEJ">
             <objects>
-                <viewController id="Yhx-6L-zDT" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PictureSearchBoard" id="Yhx-6L-zDT" customClass="PictureSearchViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eav-83-rwY">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -150,10 +160,10 @@
             </objects>
             <point key="canvasLocation" x="1180" y="2064"/>
         </scene>
-        <!--View Controller-->
+        <!--Typing Search View Controller-->
         <scene sceneID="2k3-Dh-MYT">
             <objects>
-                <viewController id="NAN-i4-dmn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TypingSearchBoard" id="NAN-i4-dmn" customClass="TypingSearchViewController" customModule="Pill_Information" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ES7-yf-8cm">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -170,7 +180,13 @@
                                                     <constraint firstAttribute="height" constant="50" id="APn-ug-l8e"/>
                                                 </constraints>
                                                 <items>
-                                                    <navigationItem title="입력으로 검색" id="Zqw-pX-Avw"/>
+                                                    <navigationItem title="입력으로 검색" id="Zqw-pX-Avw">
+                                                        <barButtonItem key="leftBarButtonItem" title="Item" image="lessthan" catalog="system" id="OXS-D5-Rj6">
+                                                            <connections>
+                                                                <action selector="btnBack:" destination="NAN-i4-dmn" id="DWa-Ky-vr4"/>
+                                                            </connections>
+                                                        </barButtonItem>
+                                                    </navigationItem>
                                                 </items>
                                             </navigationBar>
                                         </subviews>
@@ -1627,13 +1643,13 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 찾기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4a-iM-12P">
-                                        <rect key="frame" x="140" y="40" width="78" height="230"/>
+                                        <rect key="frame" x="140" y="40" width="78" height="251"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wUH-rb-OI9">
-                                        <rect key="frame" x="16" y="270" width="326" height="496"/>
+                                        <rect key="frame" x="16" y="291" width="326" height="475"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="fcq-h5-0Fu">
                                                 <rect key="frame" x="8" y="120" width="310" height="34"/>
@@ -1682,13 +1698,13 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmj-Rm-xu9">
-                                                <rect key="frame" x="20" y="188" width="286" height="266"/>
+                                                <rect key="frame" x="20" y="188" width="286" height="245"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" systemColor="systemRedColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7X8-ie-26A">
-                                                <rect key="frame" x="103" y="454" width="120" height="34"/>
+                                                <rect key="frame" x="103" y="433" width="120" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="120" id="2wt-ru-lOs"/>
                                                     <constraint firstAttribute="height" constant="34" id="Lri-4J-ip7"/>
