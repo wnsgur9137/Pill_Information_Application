@@ -39,7 +39,7 @@ class SearchPillViewController: UIViewController {
             vcName.modalPresentationStyle = .fullScreen
             vcName.modalTransitionStyle = .crossDissolve
             self.present(vcName, animated: true, completion: nil)
-        } else if viewName == "typingSearchBoard" {
+        } else if viewName == "typingSearch" {
             guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "TypingSearchBoard")as? TypingSearchViewController else {return}
             
             vcName.modalPresentationStyle = .fullScreen
