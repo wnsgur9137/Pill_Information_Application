@@ -29,6 +29,8 @@
 - OS: macOS Monterey  
 - IDE: Xcode Version 13.4.1 (13F100)  
 - IOS: IOS15.5  
+- DB : Firebase, MySQL
+- Package : Firebase, GoogleLogin, Calendar
 
 <br>
 
