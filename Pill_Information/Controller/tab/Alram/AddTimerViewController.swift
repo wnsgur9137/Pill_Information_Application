@@ -126,14 +126,14 @@ class AddTimerViewController: UIViewController {
     }
     
     @IBAction func btnGoBack(_ sender: UIBarButtonItem) {
-        changeView(viewName: "Alarm")
+        changeView(viewName: "Alram")
     }
      
     /// 화면 전환 함수
     /// - Parameter viewName: 어떤 화면을 전환할지 정할 문자열
     func changeView(viewName: String) {
         if viewName == "Alram" {
-            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "AlramBoard")as? AlramViewController else {return}
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "MainBoard")as? UITabBarController else {return}
             
             vcName.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
             vcName.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
