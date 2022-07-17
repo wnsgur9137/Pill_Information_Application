@@ -23,7 +23,7 @@ class TypingSearchViewController: UIViewController {
     /// - Parameter viewName: 어떤 화면을 전환할지 정할 문자열
     func changeView(viewName: String) {
         if viewName == "searchPillView" {
-            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "SearchPillBoard")as? SearchPillViewController else {return}
+            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "MainBoard")as? UITabBarController else {return}
             
             vcName.modalPresentationStyle = .fullScreen
             vcName.modalTransitionStyle = .crossDissolve

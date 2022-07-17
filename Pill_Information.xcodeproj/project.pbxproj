@@ -36,7 +36,6 @@
 		66EF364228752E840013F196 /* UserDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EF364128752E840013F196 /* UserDeleteViewController.swift */; };
 		D2FA4D15348F68B63DC64C33 /* Pods_Pill_Information.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B266B3AFAFF3C632C92607 /* Pods_Pill_Information.framework */; };
 		F5B5FB17288194E20084943E /* AddTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5FB16288194E20084943E /* AddTimerViewController.swift */; };
-		F5B5FB192882B84F0084943E /* Sicilian_Breeze.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F5B5FB182882B84F0084943E /* Sicilian_Breeze.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,7 +72,6 @@
 		E124EF16CE62D85C5CF982DA /* Pods-Pill_Information.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill_Information.release.xcconfig"; path = "Target Support Files/Pods-Pill_Information/Pods-Pill_Information.release.xcconfig"; sourceTree = "<group>"; };
 		EF72D8D604A305331C1178DC /* Pods-Pill_Information.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pill_Information.debug.xcconfig"; path = "Target Support Files/Pods-Pill_Information/Pods-Pill_Information.debug.xcconfig"; sourceTree = "<group>"; };
 		F5B5FB16288194E20084943E /* AddTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimerViewController.swift; sourceTree = "<group>"; };
-		F5B5FB182882B84F0084943E /* Sicilian_Breeze.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Sicilian_Breeze.mp3; path = "../../../../../../Desktop/example 2/13장/본문실습/Audio/Sicilian_Breeze.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,7 +207,6 @@
 		66E01A05287D6C3600E2A86F /* Alram */ = {
 			isa = PBXGroup;
 			children = (
-				F5B5FB182882B84F0084943E /* Sicilian_Breeze.mp3 */,
 				66E01A06287D6C8600E2A86F /* AlramViewController.swift */,
 				66E01A08287D6CCC00E2A86F /* AddAlramViewController.swift */,
 				F5B5FB16288194E20084943E /* AddTimerViewController.swift */,
@@ -288,7 +285,6 @@
 				66B10D6328654EE800CEE1FA /* GoogleService-Info.plist in Resources */,
 				66B10D54286547CF00CEE1FA /* Assets.xcassets in Resources */,
 				66B10D52286547CE00CEE1FA /* Main.storyboard in Resources */,
-				F5B5FB192882B84F0084943E /* Sicilian_Breeze.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
