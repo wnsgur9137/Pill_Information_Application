@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import AudioToolbox
+import AVFoundation
 
 enum TimerStatus {
     case start
@@ -14,7 +14,7 @@ enum TimerStatus {
     case end
 }
 
-class AddTimerViewController: UIViewController {
+class AddTimerViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet var TimerPicker: UIDatePicker!
     @IBOutlet var lblLeftTime: UILabel!
     @IBOutlet var startButton: UIButton!
@@ -26,10 +26,14 @@ class AddTimerViewController: UIViewController {
     var timer: DispatchSourceTimer?
     var currentSeconds = 0
     
+    var audioPlayer: AVAudioPlayer!
+    var audioFile: URL!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureStartButton()
+        
+        audioFile = Bundle.main.url(forResource: "Sicilian_Breeze", withExtension: "mp3")
     }
     
     func setTimerInfoViewVisible(isHidden: Bool) {
@@ -61,7 +65,8 @@ class AddTimerViewController: UIViewController {
                 if self.currentSeconds <= 0
                 {
                     self.stopTimer()
-                    AudioServicesPlaySystemSound(1005)
+                    self.initPlay()
+                    self.messageAlert(controllerTitle: "타이머 종료", controllerMessage: "약 먹을 시간", actionTitle: "확인")
                 }
                 
             })
@@ -117,6 +122,22 @@ class AddTimerViewController: UIViewController {
         }
     }
     
+    func initPlay() {
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: audioFile)
+            audioPlayer.play()
+        } catch let error as NSError {
+            print("Error - initPlay : \(error)")
+        }
+        
+        audioPlayer.delegate = self
+        audioPlayer.prepareToPlay()
+    }
+    
+    func stopPlay() {
+        audioPlayer.stop()
+    }
+    
     @IBAction func btnCancel(_ sender: UIButton) {
         switch self.timerStatus
         {
@@ -140,20 +161,21 @@ class AddTimerViewController: UIViewController {
             self.present(vcName, animated: true, completion: nil)
         }
     }
-}
-
-
+    
     /// Alert 출력
     /// - Parameters:
     ///   - controllerTitle: Alert Title
     ///   - controllerMessage: Alert Message
     ///   - actionTitle: action(button content)
-    ///   /*
-   /* func messageAlert(controllerTitle:String, controllerMessage:String, actionTitle:String) {
+    ///
+    func messageAlert(controllerTitle:String, controllerMessage:String, actionTitle:String) {
         let alertCon = UIAlertController(title: controllerTitle, message: controllerMessage, preferredStyle: UIAlertController.Style.alert)
-        let alertAct = UIAlertAction(title: actionTitle, style: UIAlertAction.Style.default)
+        let alertAct = UIAlertAction(title: actionTitle, style: UIAlertAction.Style.default, handler: {_ in self.stopPlay()})
         alertCon.addAction(alertAct)
         present(alertCon, animated: true, completion: nil)
     }
-*/
 
+}
+
+
+    
